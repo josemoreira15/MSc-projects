@@ -1,0 +1,96 @@
+---
+# MySQL
+
+- name: Create Storage Class
+  k8s:
+    state: present
+    definition:
+      apiVersion: storage.k8s.io/v1
+      kind: StorageClass
+      metadata:
+        name: laravelio-storage
+      provisioner: kubernetes.io/gce-pd
+      allowVolumeExpansion: true
+      volumeBindingMode: Immediate
+
+- name: Deployment for MySQL
+  k8s:
+    state: present
+    definition:
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: mysql-dpm
+        namespace: "default"
+        labels:
+          app: mysql
+          tier: database
+      spec:
+        selector:
+          matchLabels:
+            app: mysql
+        strategy:
+          type: Recreate
+        template:
+          metadata:
+            labels:
+              app: mysql
+              tier: database
+          spec:
+            containers:
+            - name: mysql
+              image: mysql:latest
+              env:
+              - name: MYSQL_ALLOW_EMPTY_PASSWORD
+                value: "true"
+              - name: MYSQL_DATABASE
+                value: "laravel"
+              - name: MYSQL_USER
+                value: "myuser"
+              - name: MYSQL_PASSWORD
+                value: "password"
+              ports:
+              - containerPort: 3306
+              volumeMounts:
+              - name: mysql-persistent-storage
+                mountPath: /var/lib/mysql
+            volumes:
+            - name: mysql-persistent-storage
+              persistentVolumeClaim:
+                claimName: mysql-pvc
+
+- name: Persistent Volume Claim for MySQL pod
+  k8s:
+    state: present
+    definition: 
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: mysql-pvc
+        namespace: "default"
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: laravelio-storage
+        resources:
+          requests:
+            storage: 5Gi
+
+- name: Service for exposing MySQL
+  k8s:
+    state: present
+    definition: 
+      apiVersion: v1
+      kind: Service
+      metadata: 
+        name: mysql-svc
+        namespace: "default"
+        labels: 
+          app: mysql
+      spec:
+        type: ClusterIP
+        selector: 
+          app: mysql
+        ports:
+          - targetPort: 3306
+            port: 3306

@@ -1,0 +1,23 @@
+---
+# Playbook to deploy laravel.io and its components
+
+- name: Create a GKE Cluster
+  hosts: localhost
+  gather_facts: false
+  roles:
+      - gke_cluster_create
+      
+- name: Deploy MySQL
+  hosts: localhost
+  roles: 
+    - deploy_mysql
+
+- name: Deploy Laravel.io
+  hosts: localhost
+  roles:
+      - deploy_laravelio
+
+- name: Start Monitoring Service
+  hosts: localhost
+  roles:
+      - monitor

@@ -1,0 +1,1 @@
+drop de features através da correlação e feature importance (month)

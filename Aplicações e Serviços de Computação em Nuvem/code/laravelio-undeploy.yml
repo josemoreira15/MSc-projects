@@ -1,0 +1,20 @@
+---
+# Playbook to undeploy laravel.io and its component
+
+- name: Undeploy Laravel.io
+  hosts: localhost
+  roles: 
+    - undeploy_laravelio
+
+- name: Undeploy MySql
+  hosts: localhost
+  tasks:
+    - name: Undeploy MySQL
+      include_role:
+        name: undeploy_mysql
+      when: "delete_data is defined and delete_data == 'true'"
+
+- name: Destroy GKE Cluster
+  hosts: localhost
+  roles:
+    - gke_cluster_destroy

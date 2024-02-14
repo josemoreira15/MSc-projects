@@ -1,0 +1,133 @@
+---
+# Laravel.io
+
+- name: Laravelio GCP address
+  gcp_compute_address:
+    name: laravelio-ip
+    region: "{{ gcp_region }}"
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_auth_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+  register: laravelio_ip
+
+- name: Update APP variables
+  set_fact:
+    app_ip: "{{ laravelio_ip.address }}"
+    app_port: 8000
+
+- name: Update GCP variables - Update app_ip
+  replace:
+    path: ./inventory/gcp.yml
+    regexp: '^(\s*app_ip:\s*).*'
+    replace: '  app_ip: {{ laravelio_ip.address }}'
+
+- name: Update GCP variables - Update app_port
+  replace:
+    path: ./inventory/gcp.yml
+    regexp: '^(\s*app_port:\s*).*'
+    replace: '  app_port: 8000'
+
+- name: Print app_ip
+  debug:
+    msg: "The updated app_ip is: {{ app_ip }}"
+
+
+- name: Deploy Laravel.io
+  k8s:
+    state: present
+    definition:
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: laravelio-dpm
+        namespace: "default"
+        labels:
+          app: laravelio
+          tier: laravelio
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: laravelio
+        strategy:
+          type: Recreate
+        template:
+          metadata:
+            labels:
+              app: laravelio
+              tier: laravelio
+          spec:
+            containers:
+              - name: laravelio
+                image: "{{ app_image }}"
+                env:
+                  - name: url
+                    value: "http://{{ app_ip }}"
+                  - name: DB_HOST
+                    value: "mysql-svc"
+                  - name: DB_DATABASE
+                    value: "laravel"
+                  - name: DB_USERNAME
+                    value: "myuser"
+                  - name: DB_PASSWORD
+                    value: "password"
+                  - name: migrate
+                    value: "true"
+                  - name: seed_database
+                    value: "true"
+                ports:
+                  - containerPort: 8000
+                    port: "{{ app_port }}"
+
+- name: Laravel.io Service
+  k8s:
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: laravelio-svc
+        namespace: "default"
+        labels:
+          app: laravelio
+      spec:
+        type: LoadBalancer
+        loadBalancerIP: "{{ app_ip }}"
+        selector:
+          app: laravelio
+        ports:
+          - targetPort: 8000
+            port: 8000
+            nodePort: 30007
+
+- name: Wait for MySql Pod
+  shell: "kubectl wait --namespace=default --for=condition=Ready pods --selector tier=database --timeout=700s"
+
+- name: Wait for Laravel.io Pod
+  shell: "kubectl wait --namespace=default --for=condition=Ready pods --selector tier=laravelio --timeout=700s"
+
+
+- name: HorizontalPodAutoscaler
+  k8s:
+    state: present
+    definition:
+      apiVersion: autoscaling/v2
+      kind: HorizontalPodAutoscaler
+      metadata:
+        name: cpu-autoscale
+        namespace: "default"
+      spec:
+        scaleTargetRef:
+          apiVersion: apps/v1
+          kind: Deployment
+          name: laravelio-dpm
+        maxReplicas: 2
+        minReplicas: 1
+        metrics: 
+        - type: Resource
+          resource:
+            name: cpu
+            target:
+              type: Utilization
+              averageUtilization: 75

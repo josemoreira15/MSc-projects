@@ -1,0 +1,16 @@
+---
+- name: Delete Service for exposing MySQL
+  shell: kubectl delete service mysql-svc
+  ignore_errors: true
+
+- name: Delete deployment for MySQL
+  shell: kubectl delete deployment mysql-dpm
+  ignore_errors: true
+
+- name: Delete Persistent Volume Claim for MySQL pod
+  shell: kubectl delete pvc mysql-pvc
+  ignore_errors: true
+
+- name: Delete Storage Class
+  shell: kubectl delete sc laravelio-storage
+  ignore_errors: true

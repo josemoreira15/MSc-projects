@@ -1,0 +1,32 @@
+---
+# Monitoring
+
+- name: Enable Monitoring API
+  gcp_serviceusage_service:
+    name: monitoring.googleapis.com
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_auth_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+  
+
+- name: Enable Compute Engine API
+  gcp_serviceusage_service:
+    name: compute.googleapis.com
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_auth_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+
+
+- name: Enable Cloud Build API
+  gcp_serviceusage_service:
+    name: cloudbuild.googleapis.com
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_auth_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+
+- name: Create Custom Monitoring Dashboard
+  command: gcloud monitoring dashboards --project="{{ gcp_project}}" create --config-from-file='roles/monitor/custom_dashboard.json' #{{ item }}'
+  # loop: '{{ dashboards_files }}'

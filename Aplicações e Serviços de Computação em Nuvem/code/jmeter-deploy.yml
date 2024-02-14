@@ -1,0 +1,7 @@
+---
+# Playbook to deploy jmeter and execute tests
+
+- name: Start Monitoring Service
+  hosts: localhost
+  roles:
+      - jmeter

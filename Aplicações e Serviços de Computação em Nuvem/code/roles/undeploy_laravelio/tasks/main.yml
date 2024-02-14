@@ -1,0 +1,8 @@
+---
+- name: Delete Laravel.io Deployment
+  shell: kubectl delete deployment laravelio-dpm
+  ignore_errors: true
+ 
+- name: Delete Laravel.io Service
+  shell: kubectl delete service laravelio-svc
+  ignore_errors: true

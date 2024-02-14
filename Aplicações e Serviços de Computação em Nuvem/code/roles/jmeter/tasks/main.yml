@@ -1,0 +1,47 @@
+---
+# JMeter
+
+- name: Download JMeter Binaries (Binaries - version 5.5)
+  get_url:
+    url: "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.tgz"
+    dest: "~/apache-jmeter-5.4.3.tgz"
+  tags:
+    - deploy
+
+
+- name: Unzip JMeter Binaries
+  unarchive:
+    src: "~/apache-jmeter-5.4.3.tgz"
+    dest: "~/"
+    remote_src: yes
+  tags:
+    - deploy
+
+
+- name: Copy Test Files
+  copy:
+    src: "Benchmarking1.jmx"
+    dest: "~/apache-jmeter-5.5"
+  tags:
+    - benchmarking1
+
+- name: Copy Test Files
+  copy:
+    src: "Benchmarking2.jmx"
+    dest: "~/apache-jmeter-5.5"
+  tags:
+    - benchmarking2
+
+- name: Benchmarking 1
+  command: >
+    ~/apache-jmeter-5.5/bin/jmeter -n -t ~/apache-jmeter-5.5/Benchmarking1.jmx -l ~/apache-jmeter-5.5/teste1.log
+  tags:
+    - benchmarking1
+
+- name: Benchmarking 2
+  command: >
+    ~/apache-jmeter-5.5/bin/jmeter -n -t ~/apache-jmeter-5.5/Benchmarking2.jmx -l ~/apache-jmeter-5.5/teste2.log
+  tags:
+    - benchmarking2
+
+
