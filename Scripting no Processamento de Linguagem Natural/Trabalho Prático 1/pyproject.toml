@@ -1,0 +1,27 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "gsadz"
+authors = [
+    { name = "duarte", email="duarte.g.parente@gmail.com" },
+    { name = "goncalo", email="goncalocp02@gmail.com" },
+    { name = "topzN", email="jose.moreira.um@gmail.com" }
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
+requires-python = ">=3.8"
+dynamic = ["version", "description"]
+
+dependencies = [
+    "spacy>=3.7.4",
+    "jjcli"
+]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["parse_data.py", "pt/*"] }
+
+[project.scripts]
+gsadz = "gsadz:main"
