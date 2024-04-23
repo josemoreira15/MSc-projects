@@ -1,0 +1,20 @@
+string function concat(string a, string b){
+    return a + b;
+}
+
+string function string_func(string a, string b, string c){
+    string y = concat(a, b, c);
+    string j = concat(a, b);
+    string i = concat(j, c);
+    int c = {'yes': 'no'};
+
+    do {
+        int a = 10;
+        int b = 5;
+        y += a;
+    } while (c < 35)
+}
+
+
+int f = 30;
+f += 'yes';

@@ -1,0 +1,16 @@
+dict a = {'lionel': 'messi'};
+
+while (a < 10){
+    int b = 5;
+    tuple f = (1, 2, 3);
+
+    int j = b + f;
+}
+
+void function print(int a, dict b){
+    dict b = {'yes': 'no'};
+
+    if (j == b){
+        print(a);
+    }
+}

@@ -1,0 +1,24 @@
+int a = 30;
+if (a < 50){
+    int b = 10;
+    int c = 30;
+    print(b, c);
+}
+else {
+    int b = 50;
+    string d = 10;
+    print(b, d);
+}
+
+int j = b + d;
+
+int function sum (list a, list b){
+    int ff = 10;
+    while (ff < 30){
+        if (ff == 'yesyes'){
+            a = [1, 2, 'ye'];
+        }
+    }
+
+    return b > 14;
+}
