@@ -1,0 +1,80 @@
+{
+    "gstats": {
+        "vars_per_type": {
+            "int": 3,
+            "float": 0,
+            "string": 1,
+            "tuple": 0,
+            "boolean": 0,
+            "dict": 1,
+            "set": 0,
+            "list": 0
+        },
+        "functions": {
+            "try": [
+                "int",
+                [
+                    "int",
+                    "dict"
+                ]
+            ]
+        },
+        "instructions": {
+            "declaration": 4,
+            "assignment": 1,
+            "unary_operation": 0,
+            "binary_operation": 1,
+            "while_loop": 0,
+            "do_while_loop": 0,
+            "for_loop": 1,
+            "call_function": 1,
+            "if_clause": 1
+        },
+        "nested_structures": 1,
+        "nested_replace_ifs": 0
+    },
+    "infos": {
+        "global": {
+            "instructions": {
+                "declaration": 1,
+                "assignment": 1
+            },
+            "vars_logs": [
+                "the variable \"a\" (int) was declared",
+                "the variable \"a\" was never used"
+            ],
+            "errors": []
+        },
+        "try": {
+            "instructions": {
+                "binary_operation": 1,
+                "for_loop": 1,
+                "if_clause": 1,
+                "declaration": 3,
+                "call_function": 1
+            },
+            "vars_logs": [
+                "the variable \"y\" (int) was declared",
+                "the variable \"y\" (string) was declared",
+                "the variable \"c\" (int) was declared",
+                "the variable \"a\" (dict) was declared",
+                "the variable \"a\" (dict) can not be declared with a tuple value\"",
+                "the variable \"y\" was never used",
+                "the variable \"b\" was never used"
+            ],
+            "errors": [
+                "the function \"print\" does not exist",
+                "the return type differs from the definition type"
+            ]
+        }
+    },
+    "variables": [
+        {
+            "a": [
+                "int",
+                true,
+                false
+            ]
+        }
+    ]
+}

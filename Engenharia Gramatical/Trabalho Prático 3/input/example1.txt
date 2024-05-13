@@ -1,0 +1,16 @@
+int a = 4;
+int a;
+
+list function ret_list(int b, list c){
+    if (a <= 10){
+        if (a < 6){
+            a += 8;
+            list y = [];
+        }
+    }
+
+    else {
+        int a = 10;
+    }
+    return b;
+}

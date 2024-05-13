@@ -1,0 +1,90 @@
+{
+    "gstats": {
+        "vars_per_type": {
+            "int": 6,
+            "float": 0,
+            "string": 1,
+            "tuple": 0,
+            "boolean": 0,
+            "dict": 0,
+            "set": 0,
+            "list": 0
+        },
+        "functions": {
+            "sum": [
+                "int",
+                [
+                    "list",
+                    "list"
+                ]
+            ]
+        },
+        "instructions": {
+            "declaration": 7,
+            "assignment": 1,
+            "unary_operation": 0,
+            "binary_operation": 0,
+            "while_loop": 1,
+            "do_while_loop": 0,
+            "for_loop": 0,
+            "call_function": 2,
+            "if_clause": 2
+        },
+        "nested_structures": 1,
+        "nested_replace_ifs": 0
+    },
+    "infos": {
+        "global": {
+            "instructions": {
+                "declaration": 6,
+                "if_clause": 1,
+                "call_function": 2
+            },
+            "vars_logs": [
+                "the variable \"d\" (string) can not be declared with a int value\"",
+                "the variable \"a\" (int) was declared",
+                "the variable \"b\" (int) was declared",
+                "the variable \"c\" (int) was declared",
+                "the variable \"d\" was not declared",
+                "the variable \"b\" was not declared",
+                "the variable \"j\" (int) was declared",
+                "the variable \"d\" (string) was declared",
+                "the variable \"j\" was never used"
+            ],
+            "errors": [
+                "the function \"print\" does not exist"
+            ]
+        },
+        "sum": {
+            "instructions": {
+                "declaration": 1,
+                "while_loop": 1,
+                "if_clause": 1,
+                "assignment": 1
+            },
+            "vars_logs": [
+                "the variable \"ff\" (int) was declared",
+                "the variable \"a\" was never used"
+            ],
+            "errors": [
+                "can not make the operation \">\" with variables of type list",
+                "the return type differs from the definition type",
+                "can not make the operation \">\" between variables of different types (list and int)"
+            ]
+        }
+    },
+    "variables": [
+        {
+            "a": [
+                "int",
+                true,
+                true
+            ],
+            "j": [
+                "int",
+                true,
+                false
+            ]
+        }
+    ]
+}

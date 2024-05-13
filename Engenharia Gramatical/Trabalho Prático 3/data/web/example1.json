@@ -1,0 +1,75 @@
+{
+    "gstats": {
+        "vars_per_type": {
+            "int": 2,
+            "float": 0,
+            "string": 0,
+            "tuple": 0,
+            "boolean": 0,
+            "dict": 0,
+            "set": 0,
+            "list": 1
+        },
+        "functions": {
+            "ret_list": [
+                "list",
+                [
+                    "int",
+                    "list"
+                ]
+            ]
+        },
+        "instructions": {
+            "declaration": 4,
+            "assignment": 0,
+            "unary_operation": 0,
+            "binary_operation": 1,
+            "while_loop": 0,
+            "do_while_loop": 0,
+            "for_loop": 0,
+            "call_function": 0,
+            "if_clause": 2
+        },
+        "nested_structures": 1,
+        "nested_replace_ifs": 0
+    },
+    "infos": {
+        "global": {
+            "instructions": {
+                "declaration": 2
+            },
+            "vars_logs": [
+                "the variable \"a\" already exists",
+                "the variable \"a\" (int) was declared"
+            ],
+            "errors": []
+        },
+        "ret_list": {
+            "instructions": {
+                "if_clause": 2,
+                "binary_operation": 1,
+                "declaration": 2
+            },
+            "vars_logs": [
+                "the variable \"y\" (list) was declared",
+                "the variable \"a\" (int) was declared",
+                "the variable \"a\" was never used",
+                "the variable \"y\" was never used",
+                "the variable \"b\" was never used",
+                "the variable \"c\" was never used"
+            ],
+            "errors": [
+                "the return type differs from the definition type"
+            ]
+        }
+    },
+    "variables": [
+        {
+            "a": [
+                "int",
+                true,
+                true
+            ]
+        }
+    ]
+}

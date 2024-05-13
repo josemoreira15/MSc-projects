@@ -1,0 +1,95 @@
+{
+    "gstats": {
+        "vars_per_type": {
+            "int": 3,
+            "float": 0,
+            "string": 3,
+            "tuple": 0,
+            "boolean": 0,
+            "dict": 0,
+            "set": 0,
+            "list": 0
+        },
+        "functions": {
+            "concat": [
+                "string",
+                [
+                    "string",
+                    "string"
+                ]
+            ],
+            "string_func": [
+                "string",
+                [
+                    "string",
+                    "string",
+                    "string"
+                ]
+            ]
+        },
+        "instructions": {
+            "declaration": 7,
+            "assignment": 0,
+            "unary_operation": 0,
+            "binary_operation": 2,
+            "while_loop": 0,
+            "do_while_loop": 1,
+            "for_loop": 0,
+            "call_function": 0,
+            "if_clause": 0
+        },
+        "nested_structures": 0,
+        "nested_replace_ifs": 0
+    },
+    "infos": {
+        "global": {
+            "instructions": {
+                "declaration": 1,
+                "binary_operation": 1
+            },
+            "vars_logs": [
+                "the variable \"f\" (int) was declared"
+            ],
+            "errors": [
+                "can not make the operation \"+=\" between variables of different types (int and string)"
+            ]
+        },
+        "concat": {
+            "instructions": {},
+            "vars_logs": [],
+            "errors": []
+        },
+        "string_func": {
+            "instructions": {
+                "declaration": 6,
+                "do_while_loop": 1,
+                "binary_operation": 1
+            },
+            "vars_logs": [
+                "the variable \"b\" (int) was declared",
+                "the variable \"y\" (string) was declared",
+                "the variable \"i\" (string) was declared",
+                "the variable \"c\" already exists",
+                "the variable \"a\" (int) was declared",
+                "the variable \"j\" (string) was declared",
+                "the variable \"i\" was never used",
+                "the variable \"b\" was never used"
+            ],
+            "errors": [
+                "the return type differs from the definition type",
+                "can not make the operation \"<\" between variables of different types (string and int)",
+                "the function \"concat\" takes 2 argument(s) but 3 was/were given",
+                "can not make the operation \"+=\" between variables of different types (string and int)"
+            ]
+        }
+    },
+    "variables": [
+        {
+            "f": [
+                "int",
+                true,
+                true
+            ]
+        }
+    ]
+}

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+        .column {
+            width: 22%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li ul {
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+        li ul li {
+            margin-bottom: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Functions</h1>
+    </header>
+    </div>
+    </div>
+        <ul>        
+            <li><h1>ret_list</h1></li>
+        </ul>
+        <div class="container">
+            <div class="column">
+                <h2>Instructions</h2>
+            <ul>     
+                <li>if_clause: 2</li>
+            </ul>
+            <ul>     
+                <li>binary_operation: 1</li>
+            </ul>
+            <ul>     
+                <li>declaration: 2</li>
+            </ul>        </div>
+        <div class="column">
+            <h2>Variables logs</h2>    <ul>
+                <li>the variable "y" (list) was declared</li>
+            </ul>    <ul>
+                <li>the variable "a" (int) was declared</li>
+            </ul>    <ul>
+                <li>the variable "a" was never used</li>
+            </ul>    <ul>
+                <li>the variable "y" was never used</li>
+            </ul>    <ul>
+                <li>the variable "b" was never used</li>
+            </ul>    <ul>
+                <li>the variable "c" was never used</li>
+            </ul>        </div>
+        <div class="column">
+            <h2>Errors</h2>    <ul>
+                <li>the return type differs from the definition type</li>
+            </ul>
+    </div>
+    </div>
+    <header>
+        <h1>Scripted code</h1>
+    </header>
+        <div class="container">
+            <div class="column">
+                <h2>Instructions</h2>
+            <ul>
+                <li>declaration: 2</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Variables logs</h2>
+            <ul>
+                <li>the variable "a" already exists</li>
+            </ul>
+            <ul>
+                <li>the variable "a" (int) was declared</li>
+            </ul>
+        </div>
+        <div class="column">
+        <h2>Errors</h2>
+        </div>
+    </div>
+    <header>
+        <h1>Global Statistics</h1>
+    </header>
+    <div class="container">
+        <div class="column">
+                <h2>Variables per Type</h2>
+            <ul>
+                <li>int: 2</li>
+                <li>float: 0</li>
+                <li>string: 0</li>
+                <li>tuple: 0</li>
+                <li>boolean: 0</li>
+                <li>dict: 0</li>
+                <li>set: 0</li>
+                <li>list: 1</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Functions</h2>
+            <ul>
+                <li>ret_list (list) - Args: ['int', 'list']</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Instructions</h2>
+            <ul>
+                <li>declaration: 4</li>
+                <li>assignment: 0</li>
+                <li>unary_operation: 0</li>
+                <li>binary_operation: 1</li>
+                <li>while_loop: 0</li>
+                <li>do_while_loop: 0</li>
+                <li>for_loop: 0</li>
+                <li>call_function: 0</li>
+                <li>if_clause: 2</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Nested Structures</h2>
+                <p>1</p>
+            <h2>Nested "ifs" that can be replaced by one</h2>
+                <p>0</p>
+        </div>
+    </div>
+    <footer>
+        <p>Duarte Parente, Gonçalo Pereira, José Moreira - Engenharia de Linguagens - Mestrado em Engenharia Informática, Universidade do Minho</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+digraph G {
+  start -> "int a = 4"
+  "int a = 4" -> "int a"
+  "int a" -> "if (a <= 10)"
+  "if (a <= 10)" [shape=diamond];
+  "if (a <= 10)" -> "if (a < 6)"
+  "if (a < 6)" [shape=diamond];
+  "if (a < 6)" -> "a += 8"
+  "a += 8" -> "list y = []"
+  "list y = []" -> "end"
+  "if (a < 6)" -> "end"
+  "if (a <= 10)" -> "int a = 10"
+  "int a = 10" -> end
+}

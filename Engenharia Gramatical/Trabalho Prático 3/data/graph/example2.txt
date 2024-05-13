@@ -1,0 +1,15 @@
+digraph G {
+  start -> "dict a = {'lionel': 'messi'}"
+  "dict a = {'lionel': 'messi'}" -> "while (a < 10)"
+  "while (a < 10)" [shape=diamond];
+  "while (a < 10)" -> "int b = 5"
+  "int b = 5" -> "tuple f = (1, 2, 3)"
+  "tuple f = (1, 2, 3)" -> "int j = b + f"
+  "int j = b + f" -> "while (a < 10)"
+  "while (a < 10)" -> "dict b = {'yes': 'no'}"
+  "dict b = {'yes': 'no'}" -> "if (j == b)"
+  "if (j == b)" [shape=diamond];
+  "if (j == b)" -> "print(a)"
+  "print(a)" -> "end"
+  "if (j == b)" -> end
+}

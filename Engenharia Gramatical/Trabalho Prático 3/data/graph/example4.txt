@@ -1,0 +1,15 @@
+digraph G {
+  start -> "string y = concat(a, b, c)"
+  "string y = concat(a, b, c)" -> "string j = concat(a, b)"
+  "string j = concat(a, b)" -> "string i = concat(j, c)"
+  "string i = concat(j, c)" -> "int c = {'yes': 'no'}"
+  "int c = {'yes': 'no'}" -> "int a = 10"
+  "int a = 10" -> "int b = 5"
+  "int b = 5" -> "y += a"
+  "y += a" -> "while (c < 35)"
+  "while (c < 35)" [shape=diamond];
+  "while (c < 35)" -> "int a = 10"
+  "while (c < 35)" -> "int f = 30"
+  "int f = 30" -> "f += 'yes'"
+  "f += 'yes'" -> end
+}
