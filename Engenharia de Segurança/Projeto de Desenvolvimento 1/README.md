@@ -18,7 +18,7 @@ Como referido, uma etapa importante do presente trabalho relaciona-se com a aná
 
 ## Requisitos funcionais
 Em primeiro lugar, apresentam-se os requisitos funcionais. Estes são os requisitos responsáveis por identificar funcionalidades e comportamentos do sistema. Deste modo, enumeram-se, de seguida, os requisitos funcionais sob a qual a aplicação foi desenvolvida:
-* o sistema deve possuir um serviço de cliente, responsável por interagir com os utilizdores
+* o sistema deve possuir um serviço de cliente, responsável por interagir com os utilizadores
 * o sistema deve possuir um serviço de servidor, responsável por intermediar a troca de mensagens entre os diversos utilizadores e guardar o estado da aplicação
 * o sistema deve ser capaz de receber mensagens de diferentes utilizadores
 * o sistema deve conseguir reencaminhar as mensagens para os devidos destinatários
