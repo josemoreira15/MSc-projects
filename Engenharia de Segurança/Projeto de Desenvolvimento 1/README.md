@@ -97,7 +97,7 @@ Um atacante pode explorar uma vulnerabilidade associada a este tipo de ataque de
 
 
 # Características da Implementação
-Nesta fase do relatório, explicam-se as várias particularidades do sitema desenvolvido. As mesmas são as que se assumem como atores principais no combate aos diversos desafios de segurança propostos e mencionados numa fase anterior do presente relatório. Adianta-se, desde já, que todos os componentes de *software* foram desenvolvidos recorrendo à linguagem de programação **python**.
+Nesta fase do relatório, explicam-se as várias particularidades do sistema desenvolvido. As mesmas são as que se assumem como atores principais no combate aos diversos desafios de segurança propostos e mencionados numa fase anterior do presente relatório. Adianta-se, desde já, que todos os componentes de *software* foram desenvolvidos recorrendo à linguagem de programação **python**.
 
 ## Identificação
 O ficheiro que contém os dados de um interveniente é uma *keystore* **PKCS12**, composta pelo certificado do utilizador e pela sua chave privada. A utilização deste tipo de ficheiros mostra-se vantajosa na medida em que os mesmos se apresentam bastante flexíveis e compatíveis com diversas plataformas, seguros no combate ao acesso a informações sensíveis e de utilização extremamente fácil, simples e rápida. Como mencionado, um dos componentes deste ficheiro é um certificado. Como requirido pelos requisitos do sistema, o mesmo adota o padrão **X.509**, um padrão que oferece várias vantagens:
