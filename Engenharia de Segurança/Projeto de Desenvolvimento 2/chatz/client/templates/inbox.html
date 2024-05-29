@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>chatZ</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/inbox.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="user-info">
+                <span class="username">{{ data['client']['username'] }}</span>
+                <div class="logout-button">
+                    <form action="/logout" method="post">
+                        <button type="submit">Log Out</button>
+                    </form>
+                </div>
+            </div>
+            <div class="messages">
+                <div class="header">
+                    <div class="sender">Sender</div>
+                    <div class="subject">Subject</div>
+                    <div class="status">Status</div>
+                    <div class="action">Action</div>
+                </div>
+                {% for unread in data['messages']['unread'] %}
+                <div class="message unread">
+                    <div class="sender">{{ unread['sender'] }}</div>
+                    <div class="subject">{{ unread['subject'] }}</div>
+                    <div class="status">unread</div>
+                    <div class="action"><a href="/inbox/{{ unread['id'] }}">open</a></div>
+                </div>
+                {% endfor %}
+                {% for read in data['messages']['read'] %}
+                <div class="message read">
+                    <div class="sender">{{ read['sender'] }}</div>
+                    <div class="subject">{{ read['subject'] }}</div>
+                    <div class="status">read</div>
+                    <div class="action"><a href="/inbox/{{ read['id'] }}">open</a></div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="return-button">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/'">Return</button>
+            </div>
+        </div>
+    </body>
+</html>

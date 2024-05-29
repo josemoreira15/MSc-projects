@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>chatZ</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/metadata.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/message.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="user-info">
+                <span class="username">{{ data['client']['username'] }}</span>
+                <div class="logout-button">
+                    <form action="/logout" method="post">
+                        <button type="submit">Log Out</button>
+                    </form>
+                </div>
+            </div>
+            <div class="mail-content">
+                <p><b>Sender: </b>{{ data['sender'] }}</p>
+                <p><b>Subject: </b>{{ data['subject'] }}</p>
+                <div class="message">
+                    <p><b>Message: </b>{{ data['message'] }}</p>
+                </div>
+            </div>
+            <div class="return-button">
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/inbox'">Return</button>
+            </div>
+        </div>
+    </body>
+</html>

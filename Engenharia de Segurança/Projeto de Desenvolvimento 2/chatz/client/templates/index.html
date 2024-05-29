@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>chatZ</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left-side">
+                {% if data == None %}
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+                {% elif data['company'] == 'Z2P Tech Solutions' %}
+                <img src="{{ url_for('static', filename='images/techsolutions.jpeg') }}" alt="logo">
+                {% elif data['company'] == 'Z2P Health Care' %}
+                <img src="{{ url_for('static', filename='images/healthcare.jpg') }}" alt="logo">
+                {% elif data['company'] == 'Z2P Motors' %}
+                <img src="{{ url_for('static', filename='images/motors.png') }}" alt="logo">
+                {% elif data['company'] == 'Z2P Real Estate' %}
+                <img src="{{ url_for('static', filename='images/realestate.png') }}" alt="logo">
+                {% elif data['company'] == 'Z2P Entertainment' %}
+                <img src="{{ url_for('static', filename='images/entertainment.png') }}" alt="logo">
+                {% endif %}
+            </div>
+            <div class="right-side">
+                {% if data == None %}
+                <button onclick="window.location.href='/login'">Log In</button>
+                <button onclick="window.location.href='/signup'">Sign Up</button>
+                {% else %}
+                <div class="user-info">
+                    <span class="username">{{ data['username'] }}</span>
+                    <div class="logout-button">
+                        <form action="/logout" method="post">
+                            <button type="submit">Log Out</button>
+                        </form>
+                    </div>
+                </div>
+                <button onclick="window.location.href='/inbox'">Inbox</button>
+                <button onclick="window.location.href='/metadata'">Send Mail</button>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
