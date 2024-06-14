@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>gchatdz</title>
+</head>
+<body>
+    <header class="header">
+        <h1 >GCHATDZ</h1>
+    </header>
+    <div class="main-div">
+        <div class="container">
+            <div class="chat-wrapper">
+                <!-- Messages will be appended here -->
+            </div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Pergunte alguma coisa..." autocomplete="off">
+                <button type="submit">
+                    <img src="{{ url_for('static', filename='images/send.svg') }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">
+                </button>
+            </form>
+        </div>
+
+        <script>
+document.getElementById('chat-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let userInput = document.getElementById('user-input').value;
+    if (userInput.trim() !== "") {
+        appendMessage('user-message', userInput);
+        fetch('/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'message=' + encodeURIComponent(userInput),
+        })
+        .then(response => response.json())
+        .then(data => {
+            appendMessage('bot-message', data.response, true);
+        });
+    }
+    document.getElementById('user-input').value = '';
+});
+
+function appendMessage(className, message, isHtml = false) {
+    let chatWrapper = document.querySelector('.chat-wrapper');
+
+    // Create new chat container
+    let newChatContainer = document.createElement('div');
+    newChatContainer.classList.add('chat-container');
+
+    // Create message element
+    let messageDiv = document.createElement('div');
+    messageDiv.classList.add(className);
+
+    let messageParagraph = document.createElement('p');
+    if (isHtml) {
+        messageParagraph.innerHTML = message;
+    } else {
+        messageParagraph.textContent = message;
+    }
+    messageDiv.appendChild(messageParagraph);
+
+    // Append user message
+    if (className === 'user-message') {
+        let rightSide = document.createElement('div');
+        rightSide.classList.add('right-side');
+        rightSide.appendChild(messageDiv);
+        newChatContainer.appendChild(rightSide);
+    } else { // Append bot message
+        let leftSide = document.createElement('div');
+        leftSide.classList.add('left-side');
+        leftSide.appendChild(messageDiv);
+        newChatContainer.appendChild(leftSide);
+    }
+
+    // Append the new chat container to the chat wrapper
+    chatWrapper.appendChild(newChatContainer);
+
+    // Scroll to the bottom of the chat
+    chatWrapper.scrollTop = chatWrapper.scrollHeight;
+}
+        </script>
+    </div>
+    <footer class="footer">
+        <p></p>
+    </footer>
+</body>
+</html>
