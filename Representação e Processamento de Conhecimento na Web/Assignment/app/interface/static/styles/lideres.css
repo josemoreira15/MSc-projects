@@ -1,0 +1,108 @@
+.navbar {
+    background-color: #00235a;
+}
+
+.btn-primary {
+    background-color: #00235a;
+    color: white;
+}
+
+h1 {
+    padding: 20px;
+    border: 2px solid #00235a;
+    margin: 20px;
+}
+
+.links {
+    position: absolute;
+    right: 20px;
+}
+
+.links .scroll-link {
+    color: #00235a;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.links .scroll-link:hover {
+    background-color: #00235a;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.arbitros, .jogadores, .clubes, .resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 100px;
+    text-align: center;
+}
+
+.resultado {
+    width: 500px;
+}
+
+.arbitro {
+    width: 500px;
+}
+
+.jogador {
+    width: 450px;
+}
+
+.clube {
+    width: 500px;
+}
+
+h2 {
+    padding: 20px;
+    margin-top: 50px;
+    border: 2px solid #00235a;
+    margin-left: 190px;
+    margin: 40px;
+}
+
+table {
+    margin-top: 30px;
+    margin-left: 0;
+    margin-bottom: 30px;
+    width: 80%; 
+    border-collapse: collapse;
+}
+
+th, td {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #00235a;
+    color: white;
+}
+
+tr:hover{
+    background-color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer {
+    margin-top: 50px;
+    background-color: #00235a;
+    height: 50px;
+
+}

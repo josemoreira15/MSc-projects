@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/gerir.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['data']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>              
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="remover">
+            <h1>Remover registos</h1>
+            <div class="form-popup" id="removePlayerForm">
+                <form id="removerForm" action="/remover" method="POST" class="form-container">
+                    <span class="close" onclick="closeForm('removePlayerForm')">&times;</span>
+                    <h2>Selecione o jogador a remover</h2>
+                    <div class="dropdown-container">
+                        <div class="dropdown">
+                            <select class="select" id="firstDropdown" onchange="updateSecondDropdown()">
+                                <option value="">Selecione o clube</option>
+                                {% for key, value in data['data']['info'].items() %}
+                                    <option value="{{ key }}">{{ value['nome'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="dropdown">
+                            <select class="select" id="secondDropdown">
+                                <option value="">Selecione o jogador</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <input type="hidden" name="clube" id="clubeInput">
+                        <input type="hidden" name="pessoa" id="jogadorInput">
+                    </div>
+                    <button type="button" class="btn" onclick="submitForm()">Remover</button>
+                </form>
+            </div>
+            <div class="form-popup" id="removeCoachForm">
+                <form id="removerTreinadorForm" action="/remover" method="POST" class="form-container">
+                    <span class="close" onclick="closeForm('removeCoachForm')">&times;</span>
+                    <h2>Selecione o treinador a remover</h2>
+                    <div class="dropdown-container">
+                        <div class="dropdown">
+                            <select class="select" id="coachDropdown">
+                                <option value="">Selecione o treinador</option>
+                                {% for key, value in data['data']['treinadores'].items() %}
+                                    <option value="{{ key }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <input type="hidden" name="pessoa" id="treinadorInput">
+                    </div>
+                    <button type="button" class="btn" onclick="submitCoachForm()">Remover</button>
+                </form>
+            </div>
+            <div class="form-popup" id="removeRefereeForm">
+                <form id="removerArbitroForm" action="/remover" method="POST" class="form-container">
+                    <span class="close" onclick="closeForm('removeRefereeForm')">&times;</span>
+                    <h2>Selecione o árbitro a remover</h2>
+                    <div class="dropdown-container">
+                        <div class="dropdown">
+                            <select class="select" id="refereeDropdown">
+                                <option value="">Selecione o árbitro</option>
+                                {% for key, value in data['data']['arbitros'].items() %}
+                                    <option value="{{ key }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <input type="hidden" name="pessoa" id="arbitroInput">
+                    </div>
+                    <button type="button" class="btn" onclick="submitRefereeForm()">Remover</button>
+                </form>
+            </div>
+            {% if data['message'] == '.' %}
+            <p style="color: white">{{ data['message'] }}</p>
+            {% elif data['message'] == 'Registo removido com sucesso!' %}
+            <p style="color: green">{{ data['message'] }}</p>
+            {% else %}
+            <p style="color: red">{{ data['message'] }}</p>
+            {% endif %}
+            <div class="column-container">
+                <div class="column">
+                    <h2>Jogador</h2>
+                    <button type="button" class="reg-button" onclick="openForm('removePlayerForm')">Remover Jogador</button>
+                </div>
+                <div class="column">
+                    <h2>Treinador</h2>
+                    <button type="button" class="reg-button" onclick="openForm('removeCoachForm')">Remover Treinador</button>
+                </div>
+                <div class="column">
+                    <h2>Árbitro</h2>
+                    <button type="button" class="reg-button" onclick="openForm('removeRefereeForm')">Remover Árbitro</button>
+                </div>
+            </div>
+        </div> 
+        <div class="adicionar">
+            <h1>Adicionar registos</h1>
+            <div class="column-container">
+                <div class="column">
+                    <h2>Jogador</h2>
+                    <button type="button" class="reg-button" onclick="openForm('addPlayerForm')">Adicionar Jogador</button>
+                    <button type="button" class="reg-button" onclick="openForm('addKeeperForm')">Adicionar Guarda-redes</button>
+                </div>
+                <div class="column">
+                    <h2>Treinador</h2>
+                    <button type="button" class="reg-button" onclick="openForm('addCoachForm')">Adicionar Treinador</button>
+                </div>
+                <div class="column">
+                    <h2>Árbitro</h2>
+                    <button type="button" class="reg-button" onclick="openForm('addRefereeForm')">Adicionar Árbitro</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-popup" id="addPlayerForm">
+            <form action="/adicionar_jogador" method="POST" class="form-container" enctype="multipart/form-data">
+                <span class="close" onclick="closeForm('addPlayerForm')">&times;</span>
+                <h2>Registo de Jogador</h2>
+
+                <div class="centered-select">
+                    <select class="add_select" id="add_register_club" name="clube" required>
+                        <option value="">Selecione o clube</option>
+                        {% for key, value in data['data']['info'].items() %}
+                            <option value="{{ key }}">{{ value['nome'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <label for="foto"><b>Fotografia</b></label>
+                <br>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+                <br>
+
+                <h3>Informações Gerais</h3>
+
+                {% for id, nome, placeholder in data['player_general_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" required>
+                {% endfor %}
+
+                <h3>Estatísticas Ofensivas</h3>
+
+                {% for id, nome, placeholder in data['player_offensive_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="0" required>
+                {% endfor %}
+
+                <h3>Estatísticas Defensivas</h3>
+
+                {% for id, nome, placeholder in data['player_deffensive_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="0" required>
+                {% endfor %}
+        
+        
+                <button type="submit" class="btn">Adicionar</button>
+            </form>
+        </div>
+
+
+        <div class="form-popup" id="addKeeperForm">
+            <form action="/adicionar_jogador" method="POST" class="form-container" enctype="multipart/form-data">
+                <span class="close" onclick="closeForm('addKeeperForm')">&times;</span>
+                <h2>Registo de Jogador</h2>
+
+                <div class="centered-select">
+                    <select class="add_select" id="add_register_club" name="clube" required>
+                        <option value="">Selecione o clube</option>
+                        {% for key, value in data['data']['info'].items() %}
+                            <option value="{{ key }}">{{ value['nome'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <label for="foto"><b>Fotografia</b></label>
+                <br>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+                <br>
+
+                <h3>Informações Gerais</h3>
+
+                {% for id, nome, placeholder in data['player_general_properties'] %}
+                    {% if id == 'posicaoJogador' %}
+                        <label for="{{ id }}"><b>{{ nome }}</b></label>
+                        <input type="text" placeholder='Guarda-redes' name="{{ id }}" value='Guarda-redes' required>
+                    {% else %}
+                        <label for="{{ id }}"><b>{{ nome }}</b></label>
+                        <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" required>
+                    {% endif %}
+                {% endfor %}
+
+                <h3>Estatísticas Guarda-redes</h3>
+
+                {% for id, nome, placeholder in data['player_gr_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="0" required>
+                {% endfor %}
+
+
+                <h3>Estatísticas Ofensivas</h3>
+
+                {% for id, nome, placeholder in data['player_offensive_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="0" required>
+                {% endfor %}
+
+                <h3>Estatísticas Defensivas</h3>
+
+                {% for id, nome, placeholder in data['player_deffensive_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="0" required>
+                {% endfor %}
+        
+        
+                <button type="submit" class="btn">Adicionar</button>
+            </form>
+        </div>
+
+
+        <div class="form-popup" id="addCoachForm">
+            <form action="/adicionar_treinador" method="POST" class="form-container" enctype="multipart/form-data">
+                <span class="close" onclick="closeForm('addCoachForm')">&times;</span>
+                <h2>Registo de Treinador</h2>
+
+                <div class="centered-select">
+                    <select class="add_select" id="add_register_club" name="clube" required>
+                        <option value="">Selecione o clube</option>
+                        {% for key, value in data['data']['info'].items() %}
+                            <option value="{{ key }}">{{ value['nome'] }}</option>
+                        {% endfor %}
+                        
+                    </select>
+                </div>
+
+                <label for="foto"><b>Fotografia</b></label>
+                <br>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+                <br>
+
+                {% for id, nome, placeholder in data['coach_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" required>
+                {% endfor %}
+        
+              
+                <button type="submit" class="btn">Adicionar</button>
+            </form>
+        </div>
+
+
+        <div class="form-popup" id="addRefereeForm">
+            <form action="/adicionar_arbitro" method="POST" class="form-container" enctype="multipart/form-data">
+                <span class="close" onclick="closeForm('addRefereeForm')">&times;</span>
+                <h2>Registo de Árbitro</h2>
+
+                <label for="foto"><b>Fotografia</b></label>
+                <br>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+                <br>
+        
+                {% for id, nome, placeholder in data['referee_properties'] %}
+                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" required>
+                {% endfor %}
+        
+                <button type="submit" class="btn">Adicionar</button>
+            </form>
+        </div>
+        <div class="editar">
+            <h1>Editar registos</h1>
+            <div class="column-container">
+                <div class="column">
+                    <h2>Jogador</h2>
+                    <button type="button" class="reg-button" onclick="openForm('editPlayerForm')">Editar Jogador</button>
+                </div>
+                <div class="column">
+                    <h2>Treinador</h2>
+                    <button type="button" class="reg-button" onclick="openForm('editCoachForm')">Editar Treinador</button>
+                </div>
+                <div class="column">
+                    <h2>Árbitro</h2>
+                    <button type="button" class="reg-button" onclick="openForm('editRefereeForm')">Editar Árbitro</button>
+                </div>
+            </div>
+        </div>
+            <div class="form-popup" id="editCoachForm">
+                <form action="/editar_registo" method="POST" class="form-container">
+                    <span class="close" onclick="closeForm('editCoachForm')">&times;</span>
+                    <h2>Editar Registo de Treinador</h2>
+
+                    <div class="centered-select">
+                        <select class="add_select" id="edit_coach" name="select" required>
+                            <option value="">Selecione o Treinador</option>
+                            {% for key, value in data['data']['treinadores'].items() %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <input type="hidden" name="tipo" value="treinador">
+            
+                    <button type="submit" class="btn">Editar</button>
+                </form>
+            </div>
+
+            <div class="form-popup" id="editRefereeForm">
+                <form action="/editar_registo" method="POST" class="form-container">
+                    <span class="close" onclick="closeForm('editRefereeForm')">&times;</span>
+                    <h2>Editar Registo de Árbitro</h2>
+
+                    <div class="centered-select">
+                        <select class="add_select" id="edit_referee" name="select" required>
+                            <option value="">Selecione o Árbitro</option>
+                            {% for key, value in data['data']['arbitros'].items() %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <input type="hidden" name="tipo" value="arbitro">
+            
+                    <button type="submit" class="btn">Editar</button>
+                </form>
+            </div>
+            
+        </div>
+
+        <div class="form-popup" id="editPlayerForm">
+            <form action="/editar_registo" method="POST" class="form-container">
+                <span class="close" onclick="closeForm('editPlayerForm')">&times;</span>
+                <h2>Editar Registo de Jogador</h2>
+                <div class="dropdown-container">
+                    <div class="dropdown">
+                        <select class="select" id="firstDropdownEditPlayer" onchange="updateSecondDropdownEditPlayer()">
+                            <option value="">Selecione o clube</option>
+                            {% for key, value in data['data']['info'].items() %}
+                                <option value="{{ key }}">{{ value['nome'] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select class="select" id="secondDropdownEditPlayer">
+                            <option value="">Selecione o jogador</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="hidden" name="tipo" value="jogador">
+                <div class="button-container">
+                    <input type="hidden" name="clube" id="clubeInputEditPlayer">
+                    <input type="hidden" name="pessoa" id="jogadorInputEditPlayer">
+                </div>
+        
+                <button type="submit" class="btn" onclick="submitEditPlayerForm()">Editar</button>
+            </form>
+        </div>
+        
+
+        <script>
+            const data = {{ data|tojson }};
+                
+            function updateSecondDropdown() {
+                const firstDropdown = document.getElementById('firstDropdown');
+                const secondDropdown = document.getElementById('secondDropdown');
+                const selectedValue = firstDropdown.value;
+                const info = data.data.info;
+        
+                while (secondDropdown.options.length > 0) {
+                    secondDropdown.remove(0);
+                }
+        
+                if (selectedValue && info[selectedValue]) {
+                    const jogadores = info[selectedValue].jogadores;
+                    jogadores.forEach(function(jogador) {
+                        const option = document.createElement('option');
+                        option.value = jogador[0];
+                        option.text = jogador[1];
+                        secondDropdown.add(option);
+                    });
+                }
+            }
+
+            function updateSecondDropdownEdit() {
+                const firstDropdown = document.getElementById('firstDropdownEdit');
+                const secondDropdown = document.getElementById('secondDropdownEdit');
+                const selectedValue = firstDropdown.value;
+                const info = data.data.info;
+        
+                while (secondDropdown.options.length > 0) {
+                    secondDropdown.remove(0);
+                }
+        
+                if (selectedValue && info[selectedValue]) {
+                    const jogadores = info[selectedValue].jogadores;
+                    jogadores.forEach(function(jogador) {
+                        const option = document.createElement('option');
+                        option.value = jogador[0];
+                        option.text = jogador[1];
+                        secondDropdown.add(option);
+                    });
+                }
+            }
+
+            function updateSecondDropdownEditPlayer() {
+                const firstDropdown = document.getElementById('firstDropdownEditPlayer');
+                const secondDropdown = document.getElementById('secondDropdownEditPlayer');
+                const selectedValue = firstDropdown.value;
+                const info = data.data.info;
+        
+                while (secondDropdown.options.length > 0) {
+                    secondDropdown.remove(0);
+                }
+        
+                if (selectedValue && info[selectedValue]) {
+                    const jogadores = info[selectedValue].jogadores;
+                    jogadores.forEach(function(jogador) {
+                        const option = document.createElement('option');
+                        option.value = jogador[0];
+                        option.text = jogador[1];
+                        secondDropdown.add(option);
+                    });
+                }
+            }
+
+            function submitForm() {
+                const firstDropdown = document.getElementById('firstDropdown');
+                const secondDropdown = document.getElementById('secondDropdown');
+                const clubeInput = document.getElementById('clubeInput');
+                const jogadorInput = document.getElementById('jogadorInput');
+
+                if (firstDropdown.value === "" || secondDropdown.value === "") {
+                    return;
+                }
+
+                clubeInput.value = firstDropdown.value;
+                jogadorInput.value = secondDropdown.value;
+
+                document.getElementById('removerForm').submit();
+            }
+
+            function submitEditPlayerForm() {
+                const firstDropdown = document.getElementById('firstDropdownEditPlayer');
+                const secondDropdown = document.getElementById('secondDropdownEditPlayer');
+                const clubeInput = document.getElementById('clubeInputEditPlayer');
+                const jogadorInput = document.getElementById('jogadorInputEditPlayer');
+
+                if (firstDropdown.value === "" || secondDropdown.value === "") {
+                    return;
+                }
+
+                clubeInput.value = firstDropdown.value;
+                jogadorInput.value = secondDropdown.value;
+
+                document.getElementById('editPlayerForm').submit();
+            }
+
+            function submitCoachForm() {
+                const coachDropdown = document.getElementById('coachDropdown');
+                const personInput = document.getElementById('treinadorInput');
+
+                if (coachDropdown.value === "") {
+                    return;
+                }
+            
+                personInput.value = coachDropdown.value;
+            
+                document.getElementById('removerTreinadorForm').submit();
+            }
+
+            function submitRefereeForm() {
+                const refereeDropdown = document.getElementById('refereeDropdown');
+                const personInput = document.getElementById('arbitroInput');
+
+                if (refereeDropdown.value === "") {
+                    return;
+                }
+            
+                personInput.value = refereeDropdown.value;
+            
+                document.getElementById('removerArbitroForm').submit();
+            }
+
+            function openForm(id) {
+                document.getElementById(id).style.display = "block";
+            }
+
+            function closeForm(id) {
+                document.getElementById(id).style.display = "none";
+            }
+        </script>
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>
+    </body>
+</html>

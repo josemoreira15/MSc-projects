@@ -1,0 +1,70 @@
+.navbar {
+    background-color: #00235a;
+}
+
+.btn-primary {
+    background-color: #00235a;
+    color: white;
+}
+
+.arbitros {
+    margin: 20px;
+}
+
+.arbitros h1 {
+    padding: 20px;
+    border: 2px solid #00235a;
+}
+
+.arbitros .cartao-arbitro {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 20px;
+}
+
+.esquerda {
+    text-align: center;
+    width: 30%;
+}
+
+.arbitros img {
+    width: 170px;
+    border-radius: 50%;
+}
+
+.direita {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basicas, .estatisticas {
+    width: 48%;
+}
+
+.basicas p, .estatisticas p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+h2 {
+    margin-bottom: 50px;
+}
+
+.cartao-container {
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    margin-top: 50px;
+    background-color: #00235a;
+    height: 50px;
+
+}

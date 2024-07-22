@@ -1,0 +1,273 @@
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.banner {
+    display: flex;
+    padding: 20px;
+}
+
+.banner img {
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 180px;
+}
+
+.banner .banner-links {
+    position: absolute;
+    right: 20px;
+}
+
+.banner .banner-links .scroll-link {
+    color: var(--primary-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.banner .banner-links .scroll-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.metadata {
+    margin-left: 80px;
+}
+
+.players-info {
+    padding: 20px;
+}
+
+.players-info h1 {
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+.players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.player-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.player-card a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.player-card:hover {
+    background-color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: black ;
+}
+
+.resultados {
+    margin: 20px;
+}
+
+.resultados h1 {
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+.cartao-jogo {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.cartao-jogo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cartao-jogo b {
+    font-weight: bold;
+    color: #555;
+}
+
+.esquerda {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.esquerda img {
+    width: 130px;
+    margin-top: 50px;
+}
+
+.casa, .fora {
+    width: calc(30% - 10px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.fora {
+    margin-right: 100px;
+}
+
+.result {
+    width: 30%;
+}
+
+.result {
+    text-align: center;
+}
+
+.direita {
+    width: 30%;
+    font-size: 20px;
+}
+
+.players-stats {
+    margin: 20px;
+    align-items: center;
+}
+
+.players-stats h1 {
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+.players-stats h2 {
+    margin-top: 70px;
+    margin-left: 190px;
+    margin-bottom: 70px;
+}
+
+table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color:var(--primary-color);
+    color: white;
+}
+
+tr:hover{
+    background-color: #ddd;
+}
+
+.players-stats .separator {
+            border-left: 2px solid black;
+        }
+
+.footer {
+    margin-top: 50px;
+    background-color:var(--primary-color);
+    height: 50px;
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 70%;
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+    color: #aaa;
+    align-self: flex-end;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 200px;
+    height: 200px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.player-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.player-details p {
+    text-align: left;
+    width: 100%;
+}

@@ -1,0 +1,34 @@
+Quais as cidades de um determinado distrito?
+
+select ?cidade where {
+    ?cidade :distrito "*distrito*" .
+}
+
+
+
+Distribuição de cidades por distrito?
+
+select ?distrito (COUNT(?cidade) AS ?numCidades) where {
+  ?cidade :distrito ?distrito
+}
+GROUP BY (?distrito)
+ORDER BY (?numCidades)
+
+
+
+Quantas cidades se podem atingir a partir do Porto?
+
+select (COUNT (?destino) as ?numDestinos) where {
+  ?s :distrito "Porto" .
+  ?ligacao :origem ?s ;
+           :destino ?destino .
+}
+
+
+
+Quais as cidades com população acima de um determinado valor?
+
+select ?cidade ?populacao where {
+    ?cidade :populacao ?populacao .
+    FILTER (?populacao > *valor*) .
+}

@@ -1,0 +1,164 @@
+{
+    "Sporting CP": {
+        "nome": "Sporting Clube de Portugal",
+        "estadio": "Estádio José Alvalade",
+        "capacidade": 50095,
+        "fundacao": "01/07/1906",
+        "vitorias": 29,
+        "empates": 3,
+        "derrotas": 2
+    },
+    "SL Benfica": {
+        "nome": "Sport Lisboa e Benfica",
+        "estadio": "Estádio da Luz",
+        "capacidade": 64642,
+        "fundacao": "28/02/1904",
+        "vitorias": 25,
+        "empates": 5,
+        "derrotas": 4
+    },
+    "FC Porto": {
+        "nome": "Futebol Clube do Porto",
+        "estadio": "Estádio do Dragão",
+        "capacidade": 50033,
+        "fundacao": "28/09/1893",
+        "vitorias": 22,
+        "empates": 6,
+        "derrotas": 6
+    },
+    "SC Braga": {
+        "nome": "Sporting Clube de Braga",
+        "estadio": "Estádio Municipal de Braga",
+        "capacidade": 30286,
+        "fundacao": "19/01/1921",
+        "vitorias": 21,
+        "empates": 5,
+        "derrotas": 8
+    },
+    "Vitória SC": {
+        "nome": "Vitória Sport Clube",
+        "estadio": "Estádio D. Afonso Henriques",
+        "capacidade": 30029,
+        "fundacao": "22/09/1922",
+        "vitorias": 19,
+        "empates": 6,
+        "derrotas": 9
+    },
+    "Moreirense FC": {
+        "nome": "Moreirense Futebol Clube",
+        "estadio": "Estádio Comendador Joaquim de Almeida Freitas",
+        "capacidade": 6153,
+        "fundacao": "01/11/1938",
+        "vitorias": 16,
+        "empates": 7,
+        "derrotas": 11
+    },
+    "FC Arouca": {
+        "nome": "Futebol Clube de Arouca",
+        "estadio": "Estádio Municipal de Arouca",
+        "capacidade": 5600,
+        "fundacao": "25/12/1951",
+        "vitorias": 13,
+        "empates": 7,
+        "derrotas": 14
+    },
+    "FC Famalicão": {
+        "nome": "Futebol Clube de Famalicão",
+        "estadio": "Estádio Municipal de Famalicão",
+        "capacidade": 5305,
+        "fundacao": "21/08/1931",
+        "vitorias": 10,
+        "empates": 12,
+        "derrotas": 12
+    },
+    "Casa Pia AC": {
+        "nome": "Casa Pia Atlético Clube",
+        "estadio": "Estádio Municipal de Rio Maior",
+        "capacidade": 6925,
+        "fundacao": "03/07/1920",
+        "vitorias": 10,
+        "empates": 8,
+        "derrotas": 16
+    },
+    "SC Farense": {
+        "nome": "Sporting Clube Farense",
+        "estadio": "Estádio de São Luís",
+        "capacidade": 7000,
+        "fundacao": "01/04/1910",
+        "vitorias": 10,
+        "empates": 7,
+        "derrotas": 17
+    },
+    "Rio Ave FC": {
+        "nome": "Rio Ave Futebol Clube",
+        "estadio": "Estádio dos Arcos",
+        "capacidade": 5300,
+        "fundacao": "10/05/1939",
+        "vitorias": 6,
+        "empates": 19,
+        "derrotas": 9
+    },
+    "Gil Vicente FC": {
+        "nome": "Gil Vicente Futebol Clube",
+        "estadio": "Estádio Cidade de Barcelos",
+        "capacidade": 12046,
+        "fundacao": "03/05/1924",
+        "vitorias": 9,
+        "empates": 9,
+        "derrotas": 16
+    },
+    "GD Estoril Praia": {
+        "nome": "Grupo Desportivo Estoril Praia",
+        "estadio": "Estádio António Coimbra da Mota",
+        "capacidade": 5000,
+        "fundacao": "17/05/1939",
+        "vitorias": 9,
+        "empates": 6,
+        "derrotas": 19
+    },
+    "CF Estrela Amadora SAD": {
+        "nome": "Clube de Futebol Estrela da Amadora SAD",
+        "estadio": "Estádio José Gomes",
+        "capacidade": 9288,
+        "fundacao": "22/01/1932",
+        "vitorias": 7,
+        "empates": 12,
+        "derrotas": 15
+    },
+    "Boavista FC": {
+        "nome": "Boavista Futebol Clube",
+        "estadio": "Estádio do Bessa",
+        "capacidade": 28263,
+        "fundacao": "01/08/1903",
+        "vitorias": 7,
+        "empates": 11,
+        "derrotas": 16
+    },
+    "Portimonense SC": {
+        "nome": "Portimonense Futebol SAD",
+        "estadio": "Estádio Municipal de Portimão",
+        "capacidade": 4961,
+        "fundacao": "14/08/1914",
+        "vitorias": 8,
+        "empates": 8,
+        "derrotas": 18
+    },
+    "FC Vizela": {
+        "nome": "Futebol Clube de Vizela",
+        "estadio": "Estádio do Vizela",
+        "capacidade": 6565,
+        "fundacao": "01/01/1939",
+        "vitorias": 5,
+        "empates": 11,
+        "derrotas": 18
+    },
+    "GD Chaves": {
+        "nome": "Grupo Desportivo de Chaves",
+        "estadio": "Estádio Municipal Engenheiro Manuel Branco Teixeira",
+        "capacidade": 8396,
+        "fundacao": "27/09/1949",
+        "vitorias": 5,
+        "empates": 8,
+        "derrotas": 21
+    }
+}

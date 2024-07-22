@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        {% set person_id = data[0].person.value.split('/')[-1] %}
+        <title>Cinema : {{ person_id }}</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>    
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                {% if data[0].name.value != "" %}
+                <h1>{{ data[0].name.value }}</h1>
+                {% else %}
+                <h1>{{ person_id }}</h1>
+                {% endif %}
+                <p><a href="/">[Página Principal]</a></p>
+                <p><a href="/pessoas">[Pessoas]</a></p>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{ data[0].name.value }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data de Nascimento</th>
+                        <td>{{ data[0].bdate.value }}</td>
+                    </tr>
+                </table>
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Filmes</th>
+                    </tr>
+                    {% for entry in data %}
+                    <tr>
+                        {% set film_id = entry.film.value.split('/')[-1] %}
+                        <td><a href="/filmes/{{ film_id }}">{{ entry.title.value }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por topzN::RPCW2024</h5>
+            </footer>
+        </div>
+    </body>
+</html>

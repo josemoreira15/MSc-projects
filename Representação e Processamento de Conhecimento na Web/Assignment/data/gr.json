@@ -1,0 +1,458 @@
+{
+    "Antonio Adán": {
+        "gk_goals_against": "22",
+        "gk_shots_on_target_against": "55",
+        "gk_clean_sheets": "9",
+        "gk_pens_att": "4",
+        "gk_pens_saved": "0",
+        "gk_psxg": "18,8"
+    },
+    "Franco Israel": {
+        "gk_goals_against": "7",
+        "gk_shots_on_target_against": "23",
+        "gk_clean_sheets": "5",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "5,6"
+    },
+    "Diogo Pinto": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "1",
+        "gk_clean_sheets": "1",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Anatoliy Trubin": {
+        "gk_goals_against": "22",
+        "gk_shots_on_target_against": "98",
+        "gk_clean_sheets": "13",
+        "gk_pens_att": "5",
+        "gk_pens_saved": "3",
+        "gk_psxg": "29,4"
+    },
+    "Samuel Soares": {
+        "gk_goals_against": "3",
+        "gk_shots_on_target_against": "11",
+        "gk_clean_sheets": "3",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "3,3"
+    },
+    "Leo Kokubo": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Diogo Costa": {
+        "gk_goals_against": "25",
+        "gk_shots_on_target_against": "77",
+        "gk_clean_sheets": "13",
+        "gk_pens_att": "6",
+        "gk_pens_saved": "1",
+        "gk_psxg": "25,9"
+    },
+    "Cláudio Ramos": {
+        "gk_goals_against": "2",
+        "gk_shots_on_target_against": "4",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "1,0"
+    },
+    "Samuel Portugal": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Matheus": {
+        "gk_goals_against": "50",
+        "gk_shots_on_target_against": "127",
+        "gk_clean_sheets": "6",
+        "gk_pens_att": "7",
+        "gk_pens_saved": "0",
+        "gk_psxg": "46,4"
+    },
+    "Stanislav Kritsyuk": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Lukáš Horníček": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Tiago Sá": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Bruno Varela": {
+        "gk_goals_against": "31",
+        "gk_shots_on_target_against": "99",
+        "gk_clean_sheets": "7",
+        "gk_pens_att": "5",
+        "gk_pens_saved": "1",
+        "gk_psxg": "35,8"
+    },
+    "Charles": {
+        "gk_goals_against": "7",
+        "gk_shots_on_target_against": "27",
+        "gk_clean_sheets": "3",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "9,7"
+    },
+    "Rafa": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Afonso Monteiro": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Kewin": {
+        "gk_goals_against": "34",
+        "gk_shots_on_target_against": "119",
+        "gk_clean_sheets": "13",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "33,8"
+    },
+    "Caio Secco": {
+        "gk_goals_against": "1",
+        "gk_shots_on_target_against": "9",
+        "gk_clean_sheets": "3",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "2,9"
+    },
+    "Mika": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Luís Pires": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "César": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Ignacio de Arruabarrena": {
+        "gk_goals_against": "45",
+        "gk_shots_on_target_against": "142",
+        "gk_clean_sheets": "4",
+        "gk_pens_att": "9",
+        "gk_pens_saved": "1",
+        "gk_psxg": "48,0"
+    },
+    "Mosquito": {
+        "gk_goals_against": "5",
+        "gk_shots_on_target_against": "7",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "3,3"
+    },
+    "João Valido": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "1",
+        "gk_clean_sheets": "1",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,1"
+    },
+    "Luiz Felipe": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Luiz Júnior": {
+        "gk_goals_against": "39",
+        "gk_shots_on_target_against": "145",
+        "gk_clean_sheets": "8",
+        "gk_pens_att": "8",
+        "gk_pens_saved": "3",
+        "gk_psxg": "47,8"
+    },
+    "Ivan Zlobin": {
+        "gk_goals_against": "2",
+        "gk_shots_on_target_against": "4",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "1,4"
+    },
+    "Ricardo Batista": {
+        "gk_goals_against": "45",
+        "gk_shots_on_target_against": "145",
+        "gk_clean_sheets": "10",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "43,7"
+    },
+    "Lucas Paes": {
+        "gk_goals_against": "5",
+        "gk_shots_on_target_against": "14",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "3,8"
+    },
+    "Ricardo Velho": {
+        "gk_goals_against": "46",
+        "gk_shots_on_target_against": "181",
+        "gk_clean_sheets": "7",
+        "gk_pens_att": "7",
+        "gk_pens_saved": "1",
+        "gk_psxg": "57,9"
+    },
+    "Miguel Carvalho": {
+        "gk_goals_against": "5",
+        "gk_shots_on_target_against": "11",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "4,6"
+    },
+    "Lucas Flores": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Jhonatan": {
+        "gk_goals_against": "30",
+        "gk_shots_on_target_against": "118",
+        "gk_clean_sheets": "9",
+        "gk_pens_att": "3",
+        "gk_pens_saved": "1",
+        "gk_psxg": "34,1"
+    },
+    "Magrão": {
+        "gk_goals_against": "12",
+        "gk_shots_on_target_against": "31",
+        "gk_clean_sheets": "1",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "11,8"
+    },
+    "Cezary Miszta": {
+        "gk_goals_against": "1",
+        "gk_shots_on_target_against": "9",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "1,1"
+    },
+    "Andrew": {
+        "gk_goals_against": "46",
+        "gk_shots_on_target_against": "143",
+        "gk_clean_sheets": "9",
+        "gk_pens_att": "7",
+        "gk_pens_saved": "2",
+        "gk_psxg": "44,1"
+    },
+    "Vinícius": {
+        "gk_goals_against": "6",
+        "gk_shots_on_target_against": "11",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "3,8"
+    },
+    "Daniel Azevedo": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Brian Araújo": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Marcelo Carné": {
+        "gk_goals_against": "28",
+        "gk_shots_on_target_against": "105",
+        "gk_clean_sheets": "8",
+        "gk_pens_att": "2",
+        "gk_pens_saved": "1",
+        "gk_psxg": "31,6"
+    },
+    "Dani Figueira": {
+        "gk_goals_against": "29",
+        "gk_shots_on_target_against": "61",
+        "gk_clean_sheets": "2",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "20,6"
+    },
+    "Bruno Brígido": {
+        "gk_goals_against": "43",
+        "gk_shots_on_target_against": "119",
+        "gk_clean_sheets": "4",
+        "gk_pens_att": "3",
+        "gk_pens_saved": "0",
+        "gk_psxg": "39,7"
+    },
+    "Wagner Santos": {
+        "gk_goals_against": "4",
+        "gk_shots_on_target_against": "13",
+        "gk_clean_sheets": "1",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "4,0"
+    },
+    "António Filipe": {
+        "gk_goals_against": "3",
+        "gk_shots_on_target_against": "10",
+        "gk_clean_sheets": "2",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "4,1"
+    },
+    "Cambila": {
+        "gk_goals_against": "3",
+        "gk_shots_on_target_against": "6",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "1",
+        "gk_psxg": "3,3"
+    },
+    "João Gonçalves": {
+        "gk_goals_against": "62",
+        "gk_shots_on_target_against": "172",
+        "gk_clean_sheets": "3",
+        "gk_pens_att": "6",
+        "gk_pens_saved": "0",
+        "gk_psxg": "58,3"
+    },
+    "Kosuke Nakamura": {
+        "gk_goals_against": "38",
+        "gk_shots_on_target_against": "95",
+        "gk_clean_sheets": "2",
+        "gk_pens_att": "3",
+        "gk_pens_saved": "0",
+        "gk_psxg": "38,6"
+    },
+    "Vinícius Silvestre": {
+        "gk_goals_against": "34",
+        "gk_shots_on_target_against": "79",
+        "gk_clean_sheets": "1",
+        "gk_pens_att": "3",
+        "gk_pens_saved": "0",
+        "gk_psxg": "28,2"
+    },
+    "Fabijan Buntić": {
+        "gk_goals_against": "60",
+        "gk_shots_on_target_against": "137",
+        "gk_clean_sheets": "6",
+        "gk_pens_att": "6",
+        "gk_pens_saved": "0",
+        "gk_psxg": "46,2"
+    },
+    "Francesco Ruberto": {
+        "gk_goals_against": "6",
+        "gk_shots_on_target_against": "24",
+        "gk_clean_sheets": "2",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "7,9"
+    },
+    "Hugo Souza": {
+        "gk_goals_against": "53",
+        "gk_shots_on_target_against": "141",
+        "gk_clean_sheets": "4",
+        "gk_pens_att": "6",
+        "gk_pens_saved": "2",
+        "gk_psxg": "50,2"
+    },
+    "Gabriel Souza": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "João Victor": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Nikola Bursać": {
+        "gk_goals_against": "0",
+        "gk_shots_on_target_against": "0",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "0",
+        "gk_pens_saved": "0",
+        "gk_psxg": "0,0"
+    },
+    "Rodrigo Moura": {
+        "gk_goals_against": "16",
+        "gk_shots_on_target_against": "35",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "12,5"
+    },
+    "Gonçalo Pinto": {
+        "gk_goals_against": "3",
+        "gk_shots_on_target_against": "8",
+        "gk_clean_sheets": "0",
+        "gk_pens_att": "1",
+        "gk_pens_saved": "0",
+        "gk_psxg": "2,6"
+    }
+}

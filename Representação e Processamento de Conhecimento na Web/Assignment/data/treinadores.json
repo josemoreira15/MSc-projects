@@ -1,0 +1,292 @@
+{
+    "Rúben Amorim": {
+        "nome": "Rúben Filipe Marques Amorim",
+        "dataNasc": "27/01/1985",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 29,
+        "e": 3,
+        "d": 2,
+        "clubes": ["Sporting CP"]
+    },
+    "Roger Schmidt": {
+        "nome": "Roger Schmidt",
+        "dataNasc": "13/03/1967",
+        "pais": "Alemanha",
+        "formacao": "4-2-3-1",
+        "v": 25,
+        "e": 5,
+        "d": 4,
+        "clubes": ["SL Benfica"]
+    },
+    "Sérgio Conceição": {
+        "nome": "Sérgio Paulo Marceneiro Conceição",
+        "dataNasc": "15/11/1974",
+        "pais": "Portugal",
+        "formacao": "4-4-2",
+        "v": 22,
+        "e": 6,
+        "d": 6,
+        "clubes": ["FC Porto"]
+    },
+    "Artur Jorge": {
+        "nome": "Artur Jorge Torres Gomes Araújo Amorim",
+        "dataNasc": "01/01/1972",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 17,
+        "e": 5,
+        "d": 5,
+        "clubes": ["SC Braga"]
+    },
+    "Rui Duarte": {
+        "nome": "Rui Pedro Viegas e Silva Gomes Duarte",
+        "dataNasc": "16/09/1978",
+        "pais": "Portugal",
+        "formacao": "4-3-3",
+        "v": 4,
+        "e": 0,
+        "d": 3,
+        "clubes": ["SC Braga"]
+    },
+    "Moreno": {
+        "nome": "João Miguel da Cunha Teixeira",
+        "dataNasc": "19/08/1981",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 6,
+        "e": 8,
+        "d": 16,
+        "clubes": ["Vitória SC", "GD Chaves"]
+    },
+    "Paulo Turra": {
+        "nome": "Paulo César Turra",
+        "dataNasc": "14/11/1973",
+        "pais": ["Brasil", "Itália"],
+        "formacao": "4-2-3-1",
+        "v": 2,
+        "e": 1,
+        "d": 2,
+        "clubes": ["Vitória SC"]
+    },
+    "Álvaro Pacheco": {
+        "nome": "Álvaro Adriano Teixeira Pacheco",
+        "dataNasc": "25/06/1971",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 15,
+        "e": 6,
+        "d": 12,
+        "clubes": ["Vitória SC", "GD Estoril Praia"]
+    },
+    "Rui Borges": {
+        "nome": "Rui Manuel Gomes Borges",
+        "dataNasc": "07/07/1981",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 16,
+        "e": 7,
+        "d": 11,
+        "clubes": ["Moreirense FC"]
+    },
+    "Daniel Ramos": {
+        "nome": "Daniel António Lopes Ramos",
+        "dataNasc": "25/12/1970",
+        "pais": "Portugal",
+        "formacao": "4-4-2",
+        "v": 1,
+        "e": 3,
+        "d": 7,
+        "clubes": ["FC Arouca"]
+    },
+    "Daniel Sousa": {
+        "nome": "Pedro Daniel da Cunha Pereira de Sousa",
+        "dataNasc": "03/10/1984",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 12,
+        "e": 4,
+        "d": 7,
+        "clubes": ["FC Arouca"]
+    },
+    "João Pedro Sousa": {
+        "nome": "João Pedro Ramos Borges Sousa",
+        "dataNasc": "04/08/1971",
+        "pais": ["Portugal", "Angola"],
+        "formacao": "4-2-3-1",
+        "v": 6,
+        "e": 10,
+        "d": 9,
+        "clubes": ["FC Famalicão"]
+    },
+    "Armando Evangelista": {
+        "nome": "Armando Evangelista Macedo Freitas",
+        "dataNasc": "03/11/1973",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 4,
+        "e": 2,
+        "d": 3,
+        "clubes": ["FC Famalicão"]
+    },
+    "Filipe Martins": {
+        "nome": "Filipe Gonçalo Pinto Martins",
+        "dataNasc": "29/05/1978",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 2,
+        "e": 4,
+        "d": 5,
+        "clubes": ["Casa Pia AC"]
+    },
+    "Pedro Moreira": {
+        "nome": "Pedro Miguel de Barros Moreira",
+        "dataNasc": "22/03/1975",
+        "pais": ["Portugal", "Moçambique"],
+        "formacao": "4-4-2",
+        "v": 3,
+        "e": 1,
+        "d": 6,
+        "clubes": ["Casa Pia AC"]
+    },
+    "Gonçalo Santos": {
+        "nome": "Gonçalo José Gonçalves dos Santos",
+        "dataNasc": "15/11/1986",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 5,
+        "e": 3,
+        "d": 5,
+        "clubes": ["Casa Pia AC"]
+    },
+    "José Mota": {
+        "nome": "José Albano Ferreira da Mota",
+        "dataNasc": "25/02/1964",
+        "pais": "Portugal",
+        "formacao": "4-3-3",
+        "v": 10,
+        "e": 7,
+        "d": 17,
+        "clubes": ["SC Farense"]
+    },
+    "Luís Freire": {
+        "nome": "Luís Carlos Batalha Freire",
+        "dataNasc": "03/11/1985",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 6,
+        "e": 19,
+        "d": 9,
+        "clubes": ["Rio Ave FC"]
+    },
+    "Vítor Campelos": {
+        "nome": "Vítor Fernando de Carvalho Campelos",
+        "dataNasc": "11/05/1975",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 7,
+        "e": 7,
+        "d": 14,
+        "clubes": ["Gil Vicente FC"]
+    },
+    "Tozé Marreco": {
+        "nome": "António José Marreco de Gouveia",
+        "dataNasc": "25/07/1987",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 2,
+        "e": 2,
+        "d": 1,
+        "clubes": ["Gil Vicente FC"]
+    },
+    "Vasco Seabra": {
+        "nome": "Vasco César Freire de Seabra",
+        "dataNasc": "15/09/1983",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 8,
+        "e": 5,
+        "d": 14,
+        "clubes": ["GD Estoril Praia"]
+    },
+    "Sérgio Vieira": {
+        "nome": "Sérgio Agostinho de Oliveira Vieira",
+        "dataNasc": "15/01/1983",
+        "pais": "Portugal",
+        "formacao": "3-4-3",
+        "v": 7,
+        "e": 12,
+        "d": 15,
+        "clubes": ["CF Estrela Amadora SAD"]
+    },
+    "Petit": {
+        "nome": "Armando Gonçalves Teixeira",
+        "dataNasc": "25/09/1976",
+        "pais": ["Portugal", "França"],
+        "formacao": "4-3-3",
+        "v": 4,
+        "e": 3,
+        "d": 6,
+        "clubes": ["Boavista FC"]
+    },
+    "Ricardo Paiva": {
+        "nome": "Ricardo Filipe Correia de Paiva",
+        "dataNasc": "24/05/1980",
+        "pais": "Portugal",
+        "formacao": "4-3-3",
+        "v": 3,
+        "e": 4,
+        "d": 8,
+        "clubes": ["Boavista FC"]
+    },
+    "Jorge Simão": {
+        "nome": "António Jorge Rocha Simão",
+        "dataNasc": "12/08/1976",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 0,
+        "e": 3,
+        "d": 2,
+        "clubes": ["Boavista FC"]
+    },
+    "Paulo Sérgio": {
+        "nome": "Paulo Sérgio Bento Brito",
+        "dataNasc": "19/02/1968",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 8,
+        "e": 8,
+        "d": 18,
+        "clubes": ["Portimonense SC"]
+    },
+    "Pablo Villar": {
+        "nome": "Pablo Villar Ferreiro",
+        "dataNasc": "04/09/1986",
+        "pais": "Espanha",
+        "formacao": "4-1-4-1",
+        "v": 2,
+        "e": 5,
+        "d": 7,
+        "clubes": ["FC Vizela"]
+    },
+    "Rubén de la Barrera": {
+        "nome": "Rubén de la Barrera Fernández",
+        "dataNasc": "18/01/1985",
+        "pais": "Espanha",
+        "formacao": "4-2-3-1",
+        "v": 3,
+        "e": 6,
+        "d": 11,
+        "clubes": ["FC Vizela"]
+    },
+    "José Gomes": {
+        "nome": "José Manuel Martins Teixeira Gomes",
+        "dataNasc": "28/08/1970",
+        "pais": "Portugal",
+        "formacao": "4-2-3-1",
+        "v": 0,
+        "e": 0,
+        "d": 5,
+        "clubes": ["GD Chaves"]
+    }
+}

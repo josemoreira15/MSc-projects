@@ -1,0 +1,30 @@
+Quantas línguas fala o Eduardo?
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-35/>
+SELECT (COUNT (?lingua) as ?nlingua) WHERE {
+    :Eduardo :falaLingua ?lingua .
+}
+
+
+
+Quem se inscreveu no curso de alemão?
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-35/>
+SELECT ?pessoa WHERE {
+    ?pessoa :aprendeCurso :CursoAlemao .
+}
+
+
+
+Quantos indivíduos existem na tua ontologia?
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-35/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT (COUNT(?individuo) as ?numIndividuo) WHERE {
+    ?individuo a owl:NamedIndividual .
+}
+
+
+
+Quem é Hanna? (recupera o máximo de informação deste personagem)
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-35/>
+SELECT * WHERE {
+    :Hanna ?p ?o .
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/lideres.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['data']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <h1>Líderes Liga Portugal Betclic 2023/2024</h1>
+        <div class="links">
+            <a href="#jogadores" class="scroll-link">Jogadores</a>
+            <a href="#clubes" class="scroll-link">Clubes</a>
+            <a href="#resultados" class="scroll-link">Resultados</a>
+        </div>
+        <h2 style="margin-top: 60px;">Árbitros</h2>
+        <div class="container">
+            <div class="arbitros">
+                {% for tipo in data['data']['arbitros'] %}
+                <table class="arbitro">
+                    <tr>
+                        <th title="Posição">#</th>
+                        <th>Árbitro</th>
+                        <th>{{ tipo }}</th>
+                    </tr>
+                    {% for elem in data['data']['arbitros'][tipo] %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="text-align: left;"><a href="/arbitros">{{ elem['nome'] }}</a></td>
+                        <td>{{ elem['valor'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endfor %}
+                <table class="arbitro">
+                    <tr>
+                        <th title="Posição">#</th>
+                        <th>Associação</th>
+                        <th>Nº de árbitros</th>
+                    </tr>
+                    {% for elem in data['data']['tabelaAssoc'] %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="text-align: left;">{{ elem['assoc'] }}</td>
+                        <td>{{ elem['num'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <h2 id="jogadores">Jogadores</h2>
+        <div class="container">
+            <div class="jogadores">
+                {% for tipo in data['data']['jogadores'] %}
+                <table class="jogador">
+                    <tr>
+                        <th title="Posição">#</th>
+                        <th>Jogador</th>
+                        <th>{{ tipo }}</th>
+                    </tr>
+                    {% for elem in data['data']['jogadores'][tipo] %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="text-align: left;">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ elem['clube'] ~ '.png') }}" alt="{{ elem['nclube'] }}" title="{{ elem['nclube'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">
+                            <span style="vertical-align: middle;"><a href="/clubes/{{ elem['clube'] }}">{{ elem['nome'] }}</a></span>
+                        </td>
+                        <td>{{ elem['valor'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <h2 id="clubes">Clubes</h2>
+        <div class="container">
+            <div class="clubes">
+                {% for tipo in data['data']['clubes'] %}
+                <table class="clube">
+                    <tr>
+                        <th title="Posição">#</th>
+                        <th>Clube</th>
+                        <th>{{ data['data']['clubes'][tipo][0] }}</th>
+                    </tr>
+                    {% for elem in data['data']['clubes'][tipo][1] %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="text-align: left;">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ elem['id'] ~ '.png') }}" alt="{{ elem['nome'] }}" title="{{ elem['nome'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">
+                            <span style="vertical-align: middle;"><a href="/clubes/{{ elem['id'] }}">{{ elem['nome'] }}</a></span>
+                        </td>
+                        <td>{{ elem['stat'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <h2  id="resultados">Resultados</h2>
+        <div class="container">
+            <div class="resultados">
+                {% for tipo in data['data']['resultados'] %}
+                <table class="resultado">
+                    <tr>
+                        <th title="Posição">#</th>
+                        {% if tipo == 'Total de Golos' %}
+                            <th>Jogo</th>
+                        {% else %}
+                            <th>Jornada</th>
+                        {% endif %}
+                        <th>{{ data['data']['resultados'][tipo][0] }}</th>
+                    </tr>
+                    {% for elem in data['data']['resultados'][tipo][1] %}
+                    {% if tipo != 'Total de Golos' %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="text-align: center;"> {{ elem['nome'] }} </td>
+                        <td>{{ elem['stat'] }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="text-align: center;"> 
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ elem['casa'] ~ '.png') }}" alt="{{ elem['ncasa'] }}" title="{{ elem['ncasa'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">        
+                            <span style="margin-right: 10px; margin-left: 10px;">{{ elem['nome'] }}</span>
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ elem['fora'] ~ '.png') }}" alt="{{ elem['nfora'] }}" title="{{ elem['nfora'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;"> 
+                        </td>
+                        <td>{{ elem['stat'] }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('.scroll-link').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>          
+    </body>
+</html>

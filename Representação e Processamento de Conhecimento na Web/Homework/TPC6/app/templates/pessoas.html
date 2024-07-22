@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Cinema : Pessoas</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>    
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>Pessoas</h1>
+                <p><a href="/">[Página Principal]</a></p>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Nome</th>
+                    </tr>
+                    {% for entry in data %}
+                    <tr>
+                        {% set person_id = entry.person.value.split('/')[-1] %}
+                        {% if entry.name.value != "" %}
+                        <td><a href="/pessoas/{{ person_id }}">{{ entry.name.value }}</a></td>
+                        {% else %}
+                        <td><a href="/pessoas/{{ person_id }}">{{ person_id }}</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por topzN::RPCW2024</h5>
+            </footer>
+        </div>
+    </body>
+</html>

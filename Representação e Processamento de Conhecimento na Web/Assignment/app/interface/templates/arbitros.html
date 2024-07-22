@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/arbitros.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['arbitros']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>              
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="arbitros">
+            <h1>Árbitros</h1>
+            {% for arbitro in data['arbitros']['arbitros'] %}
+            <div class="cartao-arbitro">
+                <div class="esquerda">
+                    <img src="{{ url_for('static', filename='images/arbitros/' ~ arbitro['id'] ~ '.png') }}" alt="{{ arbitro['nome'] }}" title="{{ arbitro['nome'] }}">
+                    <p><b>{{ arbitro['nome'] }}</b></p>
+                    <p title="Nacionalidade">{{ arbitro['nacionalidade'] }}</p>
+                </div>
+                <div class="direita">
+                    <div class="basicas">
+                        <h2>Informações pessoais</h2>
+                        <h3>{{ arbitro['nomeCompleto'] }}</h3>
+                        <p><b>Data de nascimento: </b>{{ arbitro['dataNascimento'] }}</p>
+                        <p><b>Associação: </b>{{ arbitro['associacao'] }}</p>
+                    </div>
+                    <div class="estatisticas">
+                        <h2>Estatísticas 2023/2024</h2>
+                        <p><b>Jogos:</b> {{ arbitro['jogos'] }}</p>
+                        <p><b>Penáltis assinalados:</b> {{ arbitro['penaltis'] }}</p>
+                        <p><b>Cartões amarelos:</b> {{ arbitro['amarelos'] }}</p>
+                        <p><b>Duplos cartões amarelos:</b> {{ arbitro['duplosAmarelos'] }}</p>
+                        <p><b>Cartões vermelhos:</b> {{ arbitro['vermelhos'] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>           
+    </body>
+</html>

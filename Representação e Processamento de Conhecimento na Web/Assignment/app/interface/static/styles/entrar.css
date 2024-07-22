@@ -1,0 +1,13 @@
+.bg-dark-blue {
+    background-color: #00235a;
+}
+
+.login-text {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.p-error {
+    color: red;
+    text-align: right;
+}

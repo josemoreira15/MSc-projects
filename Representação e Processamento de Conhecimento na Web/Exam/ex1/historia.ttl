@@ -1,0 +1,212 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/untitled-ontology-35/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/untitled-ontology-35/> .
+
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-35> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#aprendeCurso
+:aprendeCurso rdf:type owl:ObjectProperty ;
+              rdfs:domain :Pessoa ;
+              rdfs:range :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#estudaEm
+:estudaEm rdf:type owl:ObjectProperty ;
+          rdfs:domain :Aluno ;
+          rdfs:range :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#falaLingua
+:falaLingua rdf:type owl:ObjectProperty ;
+            rdfs:domain :Pessoa ;
+            rdfs:range :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#temAmigo
+:temAmigo rdf:type owl:ObjectProperty ;
+          rdfs:domain :Pessoa ;
+          rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#temDocente
+:temDocente rdf:type owl:ObjectProperty ;
+            rdfs:domain :Escola ;
+            rdfs:range :Professor .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#temEscola
+:temEscola rdf:type owl:ObjectProperty ;
+           rdfs:domain :Universidade ;
+           rdfs:range :Escola .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#temProfessor
+:temProfessor rdf:type owl:ObjectProperty ;
+              rdfs:domain :Curso ;
+              rdfs:range :Professor .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#horario
+:horario rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Curso ;
+         rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#idade
+:idade rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Pessoa ;
+       rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#local
+:local rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Curso ;
+       rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#nasceu
+:nasceu rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Pessoa ;
+        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Aluno
+:Aluno rdf:type owl:Class ;
+       rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Curso
+:Curso rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Escola
+:Escola rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Lingua
+:Lingua rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Professor
+:Professor rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Universidade
+:Universidade rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Alemao
+:Alemao rdf:type owl:NamedIndividual ,
+                 :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Aluno ;
+     :aprendeCurso :CursoAlemao .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Biotecnologia
+:Biotecnologia rdf:type owl:NamedIndividual ,
+                        :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Carlos
+:Carlos rdf:type owl:NamedIndividual ,
+                 :Aluno ;
+        :aprendeCurso :CursoAlemao .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#CursoAlemao
+:CursoAlemao rdf:type owl:NamedIndividual ,
+                      :Curso ;
+             :temProfessor :Helmut ;
+             :horario "sexta-feira" ;
+             :local "centro de linguas da universidade" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Eduardo
+:Eduardo rdf:type owl:NamedIndividual ,
+                  :Aluno ;
+         :aprendeCurso :CursoAlemao ;
+         :estudaEm :UniDoMinho ;
+         :falaLingua :Alemao ,
+                     :Espanhol ,
+                     :Ingles ,
+                     :Portugues ;
+         :temAmigo :Ana ,
+                   :Carlos ;
+         :idade "21"^^xsd:int ;
+         :nasceu "Porto" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Espanhol
+:Espanhol rdf:type owl:NamedIndividual ,
+                   :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Hanna
+:Hanna rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :aprendeCurso :Biotecnologia ;
+       :falaLingua :Alemao ,
+                   :Portugues ;
+       :temAmigo :Eduardo ;
+       :nasceu "Alemanha" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Helmut
+:Helmut rdf:type owl:NamedIndividual ,
+                 :Professor ;
+        :falaLingua :Portugues ;
+        :nasceu "Alemanha" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Ingles
+:Ingles rdf:type owl:NamedIndividual ,
+                 :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#LetrasArtesCienciasHumanas
+:LetrasArtesCienciasHumanas rdf:type owl:NamedIndividual ,
+                                     :Escola ;
+                            :temDocente :Helmut .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#Portugues
+:Portugues rdf:type owl:NamedIndividual ,
+                    :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-35#UniDoMinho
+:UniDoMinho rdf:type owl:NamedIndividual ,
+                     :Universidade ;
+            :temEscola :LetrasArtesCienciasHumanas .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

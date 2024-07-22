@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Cinema : {{ data.film }} </title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>    
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>{{ data.title }}</h1>
+                <p><a href="/">[Página Principal]</a></p>
+                <p><a href="/filmes">[Filmes]</a></p>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Título</th>
+                        <td>{{ data.title }}</td>
+                    </tr>
+                </table>
+                {% if data.descriptions | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Descrição</th>
+                    </tr>
+                    {% for description in data.descriptions %}
+                    <tr>
+                        <td>{{ description }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.durations | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Duração</th>
+                    </tr>
+                    {% for duration in data.durations %}
+                    <tr>
+                        <td>{{ duration }} segundos</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.countries | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>País</th>
+                    </tr>
+                    {% for country in data.countries %}
+                    <tr>
+                        <td>{{ country }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.genres | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Género</th>
+                    </tr>
+                    {% for genre in data.genres %}
+                    <tr>
+                        <td>{{ genre }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.dates | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Data de Lançamento</th>
+                    </tr>
+                    {% for date in data.dates %}
+                    <tr>
+                        <td>{{ date }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.actors | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Elenco</th>
+                    </tr>
+                    {% for actor in data.actors %}
+                    {% set actor_id = actor.split('/')[-1] %}
+                    <tr>
+                        <td><a href="/pessoas/{{ actor_id }}">{{ actor_id }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.directors | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Realização</th>
+                    </tr>
+                    {% for director in data.directors %}
+                    {% set director_id = director.split('/')[-1] %}
+                    <tr>
+                        <td><a href="/pessoas/{{ director_id }}">{{ director_id }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.producers | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Produção</th>
+                    </tr>
+                    {% for producer in data.producers %}
+                    {% set producer_id = producer.split('/')[-1] %}
+                    <tr>
+                        <td><a href="/pessoas/{{ producer_id }}">{{ producer_id }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.writers | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Escrita</th>
+                    </tr>
+                    {% for writer in data.writers %}
+                    {% set writer_id = writer.split('/')[-1] %}
+                    <tr>
+                        <td><a href="/pessoas/{{ writer_id }}">{{ writer_id }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+                {% if data.composers | length > 0 %}
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Composição Musical</th>
+                    </tr>
+                    {% for composer in data.composers %}
+                    {% set composer_id = composer.split('/')[-1] %}
+                    <tr>
+                        <td><a href="/pessoas/{{ composer_id }}">{{ composer_id }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por topzN::RPCW2024</h5>
+            </footer>
+        </div>
+    </body>
+</html>

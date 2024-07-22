@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/bootstrap.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/entrar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="bg-dark-blue">
+        <div class="pt-5">
+            <h1 class="text-center loginHeader"><span class="login-text">Iniciar sessão</span></h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <div class="card card-body">
+                        <p style="text-align: center">Introduza as suas credenciais</p>
+                        <div class="form">
+                            <form action="/entrar" method="POST">
+                                <div class="form-group required"><label>Nome de administrador</label><input class="form-control" type="text" name="username" required></div>
+                                <div class="form-group required"><label class="d-flex flex-row align-items-center">Password</label><input class="form-control form-control" type="password" name="password" required></div>
+                                <div class="form-group pt-1"><button class="btn btn-primary btn-block" type="submit">Iniciar sessão</button></div>
+                                {% if data['error'] != '' %}
+                                    <p class="p-error">{{ data['error'] }}</p>
+                                {% endif %}
+                            </form>
+                        </div>
+                        <hr><a class="volt" href="/"><i class="fa fa-arrow-left">&nbsp&nbspPágina principal</i></a></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

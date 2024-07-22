@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/clube.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            :root {
+                --primary-color: {{ data['color'] }};
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['data']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>              
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="{{ url_for('static', filename='images/clubes/' ~ data['club'] ~ '.png') }}" alt="{{ data['data']['info']['nomeClube'] }}" title="{{ data['data']['info']['nomeClube'] }}">
+            <div class="metadata">
+                <h1>{{ data['data']['info']['nomeCompletoClube'] }}</h1>
+                <p><b>Fundação: </b>{{ data['data']['info']['fundacaoClube'] }}</p>
+                <p><b>Nome do estádio: </b>{{ data['data']['info']['nomeEstadio'] }}</p>
+                <p><b>Capacidade do estádio: </b>{{ data['data']['info']['capacidadeEstadio'] }}</p>
+                <p><b>Lotação média do estádio: </b>{{ data['data']['info']['lotacaoMedia'] }} ({{ data['data']['info']['lotacaoPerc'] }} %)</p>
+                <p><b>Treinador(es): </b>
+                    {% for treinador in data['data']['treinadores'] %}
+                        <a href="/treinadores">{{ treinador['nome'] }}</a>{% if not loop.last %} / {% endif %}
+                    {% endfor %}
+                </p>
+                <div class="banner-links">
+                    <a href="#resultados" class="scroll-link">Resultados</a>
+                    <a href="#stats" class="scroll-link">Estatísticas</a>
+                </div>
+            </div>
+        </div>
+        <div class="players-info">
+            <h1>Plantel Principal</h1>
+            <div class="players">
+                {% for jogador in data['data']['jogadores'] %}
+                <div class="player-card" onclick="openModal('{{ jogador['nome'] }}', '{{ url_for('static', filename='images/jogadores/' ~ data['club'] ~ '/' ~ jogador['id'] ~ '.png') }}', '{{ jogador['nomeCompleto'] }}', '{{ jogador['dataNascimento'] }}', '{{ jogador['nacionalidade'] }}', '{{ jogador['altura'] }}', '{{ jogador['pe'] }}', '{{ jogador['valor'] }}')">
+                    <a href="javascript:void(0);">
+                        <img src="{{ url_for('static', filename='images/jogadores/' ~ data['club'] ~ '/' ~ jogador['id'] ~ '.png') }}" alt="{{ jogador['nome'] }}">
+                    </a>
+                    <b>{{ jogador['numero'] }}</b>
+                    <a href="javascript:void(0);">{{ jogador['nome'] }}</a>
+                    <span>{{ jogador['posicao'] }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="resultados" class="resultados">
+            <h1>Resultados</h1>
+            {% for jogo in data['data']['jogos'] %}
+            <div class="cartao-jogo">
+                <div class="esquerda">
+                    <div class="casa">
+                        <img src="{{ url_for('static', filename='images/clubes/' ~ jogo['idEquipaCasa'] ~ '.png') }}" alt="{{ jogo['nomeEquipaCasa'] }}" title="{{ jogo['nomeEquipaCasa'] }}">
+                        <h3 title="Formação">({{jogo['formacaoCasa']}}) </h3>
+                    </div>
+                    <div class="result">
+                        <h2 style="align-items: center;">{{ jogo['jornada'] }}</h2>
+                        <h3 title="Resultado final" style="font-size: 50px;">{{ jogo['resultado'] }}</h3>
+                        <h4 title="Golos esperados" style="font-size: 15px;">xG: {{ jogo['xgCasa'] }} - {{ jogo['xgFora'] }}</h5>
+                        <h3 title="Posse de bola" style="font-size: 20px;">{{ jogo['posseJogo'] }}</h3>
+                    </div>
+                    <div class="fora">
+                        <img src="{{ url_for('static', filename='images/clubes/' ~ jogo['idEquipaFora'] ~ '.png') }}" alt="{{ jogo['nomeEquipaFora'] }}" title="{{ jogo['nomeEquipaFora'] }}">
+                        <h3 title="Formação">({{jogo['formacaoFora']}}) </h3>
+                    </div>
+                </div>
+                <div class="direita">
+                    <p title="Data do encontro"><b>{{ jogo['dataJogo'] }}</b></p>
+                    <p title="Hora do encontro"><b>{{ jogo['hora'] }}</b></p>
+                    <p><b>Árbitro: </b><a href="/arbitros">{{ jogo['nomeArbitro'] }}</a></p>
+                    <p><b>Espectadores: </b>{{ jogo['espectadores'] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div id= "stats" class="players-stats">
+            <h1>Estatísticas</h1>
+            <h2>Guarda-redes</h2>
+            <table>
+                <tr>
+                    <th title="Número da camisola">#</th>
+                    <th>Nome</th>
+                    <th>Jogos</th>
+                    <th>Minutos</th>
+                    <th title="Remates sofridos">RS</th>
+                    <th title="Golos sofridos">GS</th>
+                    <th title="Golos sofridos esperados">xGS</th>
+                    <th title="Diferença entre golos sofridos esperados e golos sofridos">xGS +/-</th>
+                    <th title="Clean sheets">CS</th>
+                    <th title="Percentagem de clean sheets">%CS</th>
+                    <th title="Penáltis contra">PC</th>
+                    <th title="Penáltis defendidos">PD</th>
+                </tr>
+                {% for gr in data['data']['grs'] %}
+                <tr>
+                    <td>{{ gr['numero'] }}</td>
+                    <td><b>{{ gr['nome'] }}</b></td>
+                    <td>{{ gr['jogos'] }}</td>
+                    <td>{{ gr['minutos'] }}</td>
+                    <td>{{ gr['rematesSofridos'] }}</td>
+                    <td>{{ gr['golosSofridos'] }}</td>
+                    <td>{{ gr['sofridosEsperados'] }}</td>
+                    {% if gr['diff']>= 0 %}
+                    <td style="color: green;">+{{ gr['diff']}}</td>
+                    {% else %}
+                    <td style="color: red;">{{ gr['diff']}}</td>
+                    {% endif %}
+                    <td>{{ gr['cleanSheets'] }}</td>
+                    <td>{{ gr['csp'] }}</td>
+                    <td>{{ gr['penaltisContra'] }}</td>
+                    <td>{{ gr['penaltisDefendidos'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <h2>Defensivas</h2>
+            <table>
+                <tr>
+                    <th title="Número da camisola">#</th>
+                    <th>Nome</th>
+                    <th>Jogos</th>
+                    <th>Minutos</th>
+                    <th title="Cortes">C</th>
+                    <th title="Cortes ganhos">CG</th>
+                    <th title="Duelos">D</th>
+                    <th title="Duelos ganhos">DG</th>
+                    <th title="Interceções">Int</th>
+                    <th title="Bolas recuperadas">BR</th>
+                    <th title="Percentagem de lances aéreos ganhos">%LAG</th>
+                    <th title="Autogolos">AG</th>
+                    <th title="Faltas cometidas">FC</th>
+                    <th title="Cartões amarelos">CA</th>
+                    <th title="Cartões vermelhos">CV</th>
+                </tr>
+                {% for jogador in data['data']['stats_def'] %}
+                <tr>
+                    <td>{{ jogador['numero'] }}</td>
+                    <td><b>{{ jogador['nome'] }}</b></td>
+                    <td>{{ jogador['jogos'] }}</td>
+                    <td>{{ jogador['mins'] }}</td>
+                    <td>{{ jogador['cortes'] }}</td>
+                    <td>{{ jogador['cortesGanhos'] }}</td>
+                    <td>{{ jogador['duelos'] }}</td>
+                    <td>{{ jogador['duelosGanhos'] }}</td>
+                    <td>{{ jogador['intercecoes'] }}</td>
+                    <td>{{ jogador['bolasRec'] }}</td>
+                    <td>{{ jogador['aereosGanhos'] }}</td>
+                    <td>{{ jogador['autoGolos'] }}</td>
+                    <td>{{ jogador['faltasCometidas'] }}</td>                
+                    <td>{{ jogador['cartoesA'] }}</td>
+                    <td>{{ jogador['cartoesV'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <h2>Atacantes</h2>
+            <table>
+                <tr>
+                    <th title="Número da camisola">#</th>
+                    <th>Nome</th>
+                    <th>Jogos</th>
+                    <th>Minutos</th>
+                    <th title="Toques">T</th>
+                    <th title="Passes completos">PC</th>
+                    <th title="Percentagem de passes completos">PP</th>
+                    <th title="Cruzamentos">C</th>
+                    <th title="Passes progressivos">PProg</th>
+                    <th title="Passes chave (key passes)">KP</th>
+                    <th title="Assistências">A</th>
+                    <th title="Assistências esperadas">xA</th>
+                    <th title="Diferença entre assistências e assistências esperadas">xA +/-</th>
+                    <th title="Remates">R</th>
+                    <th title="Remates à baliza">RB</th>
+                    <th title="Golos">G</th>
+                    <th title="Golos esperados">xG</th>
+                    <th title="Diferença entre golos e golos esperados">xG +/-</th>
+                    <th title="Ações de criação de golo">ACG</th>
+                    <th title="Conduções progressivas">CProg</th>
+                    <th title="Foras de jogo">FJ</th>
+                    <th title="Faltas sofridas">FS</th>
+                </tr>
+                {% for jogador in data['data']['stats_atac'] %}
+                <tr>
+                    <td>{{ jogador['numero'] }}</td>
+                    <td><b>{{ jogador['nome'] }}</b></td>
+                    <td>{{ jogador['jogos'] }}</td>
+                    <td>{{ jogador['mins'] }}</td>
+                    <td>{{ jogador['toques'] }}</td>
+                    <td>{{ jogador['passesComp'] }}</td>
+                    <td>{{ jogador['percentagemPasses'] }}</td>
+                    <td>{{ jogador['cruzamentos'] }}</td>
+                    <td>{{ jogador['passesProg'] }}</td>
+                    <td>{{ jogador['keypasses'] }}</td>
+                    <td>{{ jogador['assists'] }}</td>
+                    <td>{{ jogador['xa'] }}</td>
+                    {% if jogador['diffa']>= 0 %}
+                    <td style="color: green;">+{{ jogador['diffa']}}</td>
+                    {% else %}
+                    <td style="color: red;">{{ jogador['diffa']}}</td>
+                    {% endif %}
+                    <td>{{ jogador['remates'] }}</td>
+                    <td>{{ jogador['rematesBaliza'] }}</td>
+                    <td>{{ jogador['golos'] }}</td>
+                    <td>{{ jogador['xg'] }}</td>
+                    {% if jogador['diffg']>= 0 %}
+                    <td style="color: green;">+{{ jogador['diffg']}}</td>
+                    {% else %}
+                    <td style="color: red;">{{ jogador['diffg']}}</td>
+                    {% endif %}
+                    <td>{{ jogador['gca'] }}</td>
+                    <td>{{ jogador['conducoes'] }}</td>                
+                    <td>{{ jogador['forasJogo'] }}</td>
+                    <td>{{ jogador['faltasSofridas'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content" id="modalPlayerInfo">
+            </div>
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>
+        <script>
+            function openModal(jog, path, nome, data, nac, altura, pe, vm) {
+                var playerInfo = `
+                    <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                    <div class="player-info">
+                        <img src="${path}" alt="${jog}" title="${jog}" style="width: 200px; border-radius: 50%; border: 2px solid var(--primary-color);">
+                        <h2>${nome}</h2>
+                        <p title="Nacionalidade">${nac}</p>
+                    </div>
+                    <div class="player-details">
+                        <p><b>Data de nascimento:</b> ${data}</p>
+                        <p><b>Altura:</b> ${altura}</p>
+                        <p><b>Melhor pé:</b> ${pe}</p>
+                        <p><b>Valor de mercado:</b> ${vm}</p>
+                    </div>
+                `;
+                document.getElementById("modalPlayerInfo").innerHTML = playerInfo;
+                document.getElementById("modal").style.display = "block";
+            }
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('.scroll-link').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+Quantos alunos estão registados? (inteiro)
+------------------------------------------
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select (count(?aluno) as ?naluno) where {
+    ?aluno rdf:type :Aluno .
+}
+
+
+
+Quantos alunos frequentam o curso "LCC"? (inteiro)
+--------------------------------------------------
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select (count(?aluno) as ?naluno) where {
+    ?aluno rdf:type :Aluno ;
+           :curso "LCC" .
+}
+
+
+
+Que alunos tiveram nota positiva no exame de época normal? (lista ordenada alfabeticamente por nome com: idAluno, nome, curso, nota do exame)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select ?id ?nome ?curso ?nota where {
+    ?aluno rdf:type :Aluno ;
+           :id ?id ;
+           :nome ?nome ;
+           :curso ?curso ;
+           :temExame ?exame .
+    ?exame :epoca "normal" ;
+           :notaexame ?nota .
+    filter (?nota >= 9.5)
+} order by (?nome)
+
+
+
+Qual a distribuição dos alunos pelas notas do projeto? (lista com: nota e número de alunos que obtiveram essa nota)
+-------------------------------------------------------------------------------------------------------------------
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select ?projeto (count(?aluno) as ?naluno) where {
+    ?aluno rdf:type :Aluno ;
+		   :projeto ?projeto .
+} group by (?projeto)
+
+
+
+Quais os alunos mais trabalhadores durante o semestre? (lista ordenada por ordem decrescente do total: idAluno, nome, curso, total = somatório dos resultados dos TPC)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select ?id ?nome ?curso (sum(?notatpc) as ?total) where {
+    ?aluno rdf:type :Aluno ;
+           :id ?id ;
+           :nome ?nome ;
+           :curso ?curso ;
+           :temTPC ?tpc .
+    ?tpc :notatpc ?notatpc .
+} group by ?id ?nome ?curso order by desc (?total)
+
+
+
+Qual a distribuição dos alunos pelos vários cursos? (lista de cursos, ordenada alfabeticamente por curso, com: curso, número de alunos nesse curso)
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select ?curso (count(?aluno) as ?naluno) where {
+    ?aluno rdf:type :Aluno ;
+           :curso ?curso ;
+} group by ?curso order by ?curso

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/editar.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['data']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>              
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="pt-5" style="padding: 20px;">
+            <h1 class="text-center loginHeader"><span class="login-text">Editar Registo</span></h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <form action="/editar_jogador/{{ data['data']['jogador']['id'] }}" method="POST" class="form-container">
+                        <h2>Registo de Jogador</h2>
+
+                        <input type="hidden" name="clube" value="{{ data['data']['jogador']['joga'] }}">
+                        
+                        <div class="row">
+                            <div class="col col1">
+                                <h3>Informações Gerais</h3>
+                                {% for id, nome, placeholder in data['player_general_properties'] %}
+                                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="{{ data['data']['jogador'][id] }}" required>
+                                {% endfor %}
+                            </div>
+                            
+                            {% if data['data']['jogador']['posicaoJogador'] == 'Guarda-redes' %}
+                            <div class="col col2">
+                                <h3>Estatísticas Guarda-redes</h3>
+                                {% for id, nome, placeholder in data['player_gr_properties'] %}
+                                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="{{ data['data']['jogador'][id] }}" required>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            <div class="col col3">
+                                <h3>Estatísticas Defensivas</h3>
+                                {% for id, nome, placeholder in data['player_deffensive_properties'] %}
+                                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="{{ data['data']['jogador'][id] }}" required>
+                                {% endfor %}
+                            </div>
+
+                            <div class="col col4">        
+                                <h3>Estatísticas Ofensivas</h3>
+                                {% for id, nome, placeholder in data['player_offensive_properties'] %}
+                                    <label for="{{ id }}"><b>{{ nome }}</b></label>
+                                    <input type="text" placeholder="{{ placeholder }}" name="{{ id }}" value="{{ data['data']['jogador'][id] }}" required>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="button-container">
+                            <button type="submit" class="edit-btn">Editar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>
+    </body>
+</html>

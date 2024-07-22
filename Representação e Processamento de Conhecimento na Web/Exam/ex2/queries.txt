@@ -1,0 +1,96 @@
+4.
+
+Quantas livros estão presentes na ontologia?
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+SELECT (COUNT(?livro) as ?nlivro) WHERE {
+    ?livro a :Book .
+}
+
+
+
+Quais os títulos dos livros em que um dos autores tem apelido "Austen"? (lista de títulos ordenada alfabeticamente)
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+SELECT DISTINCT ?titulo WHERE {
+    ?livro :hasAuthor ?autor .
+    ?livro :title ?titulo .
+    FILTER regex(str(?autor), "Austen", "i") 
+}
+ORDER BY ?titulo
+
+
+
+Qual a distribuição de livros por género? (lista de géneros sem repetições e ordenada alfabeticamente em que a cada género está associado o número de livros pertencente a esse género)
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+SELECT ?genero (COUNT(?livro) AS ?numLivros) WHERE {
+    ?livro :hasGenre ?genero .
+}
+GROUP BY ?genero
+ORDER BY ?genero
+
+
+
+Produz uma lista de pares, nome do personagem e a lista de livros onde esse personagem aparece, ordenada alfabeticamente por nome de personagem;
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+SELECT ?personagem (GROUP_CONCAT(?titulo; separator=", ") AS ?livros) WHERE {
+    ?livro :hasCharacter ?personagem .
+    ?livro :title ?titulo .
+}
+GROUP BY ?personagem
+ORDER BY ?personagem
+
+
+
+Qual a distribuição de livros por autor? (lista de autores sem repetições e ordenada alfabeticamente em que a cada autor está associado o número de livros escritos por esse autor);
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+
+SELECT ?autor (COUNT(?livro) AS ?numLivros) WHERE {
+    ?livro :hasAuthor ?autor .
+}
+GROUP BY ?autor
+ORDER BY ?autor
+
+
+
+Quais os títulos dos livros pertencentes ao género "Adventure"? (lista ordenada alfabeticamente de títulos)
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+
+SELECT ?titulo WHERE {
+    ?livro :hasGenre :Adventure .
+    ?livro :title ?titulo .
+}
+ORDER BY ?titulo
+
+
+
+
+
+5.
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+
+CONSTRUCT {
+    ?autor1 :hasCoAuthor ?autor2 .
+}
+WHERE {
+    ?livro :hasAuthor ?autor1 .
+    ?livro :hasAuthor ?autor2 .
+    FILTER (?autor1 != ?autor2) .
+}
+
+
+
+
+
+6.
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/>
+
+SELECT ?autor (GROUP_CONCAT(?coautor; separator=", ") AS ?coautores) WHERE {
+    ?livro :hasAuthor ?autor .
+    ?autor :hasCoAuthor ?coautor .
+}
+GROUP BY ?autor
+ORDER BY ?autor

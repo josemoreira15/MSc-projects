@@ -1,0 +1,284 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/cinema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/cinema/> .
+
+<http://rpcw.di.uminho.pt/2024/cinema> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:domain :Film ;
+            rdfs:range :Country .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/acted
+:acted rdf:type owl:ObjectProperty ;
+       owl:inverseOf :hasActor ;
+       rdfs:domain :Person ;
+       rdfs:range :Film .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/composed
+:composed rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasComposer ;
+          rdfs:domain :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/directed
+:directed rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasDirector ;
+          rdfs:domain :Person ;
+          rdfs:range :Film .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasActor
+:hasActor rdf:type owl:ObjectProperty ;
+          rdfs:domain :Film ;
+          rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasComposer
+:hasComposer rdf:type owl:ObjectProperty ;
+             rdfs:domain :Film ;
+             rdfs:range :Composer ,
+                        :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:domain :Film .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasDirector
+:hasDirector rdf:type owl:ObjectProperty ;
+             rdfs:domain :Film ;
+             rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasGenre
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:domain :Film ;
+          rdfs:range :Genre .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasProducer
+:hasProducer rdf:type owl:ObjectProperty ;
+             owl:inverseOf :produced ;
+             rdfs:domain :Film ;
+             rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/hasWriter
+:hasWriter rdf:type owl:ObjectProperty ;
+           owl:inverseOf :wrote ;
+           rdfs:domain :Film ;
+           rdfs:range :Writer ,
+                      :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/produced
+:produced rdf:type owl:ObjectProperty ;
+          rdfs:domain :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/wrote
+:wrote rdf:type owl:ObjectProperty ;
+       rdfs:domain :Writer ,
+                   :Person .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#releaseDate
+:releaseDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Film ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/birthDate
+:birthDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Film ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Film ;
+          rdfs:range xsd:double .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Film ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Composer
+:Composer rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :composed ;
+                                                       owl:someValuesFrom :Film
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Country
+:Country rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Writer
+:Writer rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :wrote ;
+                                                     owl:someValuesFrom :Film
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/Actor
+:Actor rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :acted ;
+                                                    owl:someValuesFrom :Film
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/Director
+:Director rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :directed ;
+                                                       owl:someValuesFrom :Film
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/Film
+:Film rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/Person
+:Person rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema/Producer
+:Producer rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :produced ;
+                                                       owl:someValuesFrom :Film
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Frank_Darabont
+:Frank_Darabont rdf:type owl:NamedIndividual ;
+                :birthDate "28-01-1959" ;
+                :name "Frank Darabont" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Morgan_Freeman
+:Morgan_Freeman rdf:type owl:NamedIndividual ;
+                :birthDate "01-06-1937" ;
+                :name "Morgan Freeman" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Niki_Marvin
+:Niki_Marvin rdf:type owl:NamedIndividual ;
+             :produced :The_Shawshank_Redemption ;
+             :birthDate "24-12-1951" ;
+             :name "Niki Marvin" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Stephen_King
+:Stephen_King rdf:type owl:NamedIndividual ;
+              :birthDate "21-09-1947" ;
+              :name "Stephen King" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#The_Shawshank_Redemption
+:The_Shawshank_Redemption rdf:type owl:NamedIndividual ;
+                          :hasCountry :USA ;
+                          :hasActor :Morgan_Freeman ,
+                                    :Tim_Robbins ;
+                          :hasComposer :Thomas_Newman ;
+                          :hasDirector :Frank_Darabont ;
+                          :hasGenre :Thriller ;
+                          :hasProducer :Niki_Marvin ;
+                          :hasWriter :Stephen_King ;
+                          :releaseDate "31-03-1995" ;
+                          :description "One film same of the caraças." ;
+                          :duration "8520.0"^^xsd:double ;
+                          :title "The Shawshank Redemption" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Thomas_Newman
+:Thomas_Newman rdf:type owl:NamedIndividual ;
+               :birthDate "20-10-1955" ;
+               :name "Thomas Newman" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Thriller
+:Thriller rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Tim_Robbins
+:Tim_Robbins rdf:type owl:NamedIndividual ;
+             :birthDate "16-10-1958" ;
+             :name "Tim Robbins" .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#USA
+:USA rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

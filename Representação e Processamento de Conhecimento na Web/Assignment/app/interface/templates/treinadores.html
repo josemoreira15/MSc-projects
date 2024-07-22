@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/treinadores.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['treinadores']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>              
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="arbitros">
+            <h1>Treinadores</h1>
+            {% for treinador in data['treinadores']['treinadores'] %}
+            <div class="cartao-arbitro">
+                <div class="esquerda">
+                    <img src="{{ url_for('static', filename='images/treinadores/' ~ data['treinadores']['treinadores'][treinador]['id'] ~ '.png') }}" alt="{{ treinador }}" title="{{ treinador }}">
+                    <p><b>{{ treinador }}</b></p>
+                    <p title="Nacionalidade">{{ data['treinadores']['treinadores'][treinador]['nacionalidade'] }}</p>
+                </div>
+                <div class="direita">
+                    <div class="basicas">
+                        <h2>Informações pessoais</h2>
+                        <h3>{{ data['treinadores']['treinadores'][treinador]['nomeCompleto'] }}</h3>
+                        <p><b>Data de nascimento: </b>{{ data['treinadores']['treinadores'][treinador]['dataNascimento'] }}</p>
+                        <p><b>Formação mais utilizada: </b>{{ data['treinadores']['treinadores'][treinador]['formacao'] }}</p>
+                    </div>
+                    <div class="estatisticas">
+                        <h2>Estatísticas 2023/2024</h2>
+                        <div class="treinadas">
+                            {% for id in data['treinadores']['treinadores'][treinador]['treina'] %}
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ id ~ '.png') }}" alt="{{ data['treinadores']['treinadores'][treinador]['treina'][id] }}" title="{{ data['treinadores']['treinadores'][treinador]['treina'][id] }}" style="width: 30px; border-radius: 0%; margin-right: 5px;">
+                            {% endfor %}
+                        </div>
+                        <p><b>Vitórias: </b>{{ data['treinadores']['treinadores'][treinador]['vitorias'] }}</p>
+                        <p><b>Empates: </b>{{ data['treinadores']['treinadores'][treinador]['empates'] }}</p>
+                        <p><b>Derrotas: </b>{{ data['treinadores']['treinadores'][treinador]['derrotas'] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>        
+    </body>
+</html>

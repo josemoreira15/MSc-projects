@@ -1,0 +1,130 @@
+{
+    "players": {
+        "stats_standard_32": {
+            "team": [
+                "goals",
+                "assists",
+                "pens_made",
+                "pens_att",
+                "cards_yellow",
+                "cards_red",
+                "xg",
+                "xg_assist"
+            ],
+            "players": [
+                "position",
+                "games",
+                "games_starts",
+                "minutes",
+                "progressive_carries",
+                "progressive_passes"
+
+            ],
+            "name": "general_stats",
+            "player_tag": "th"
+        },
+        "stats_shooting_32": {
+            "team": [
+                "shots",
+                "shots_on_target"
+            ],
+            "players": [],
+            "name": "attack_stats",
+            "player_tag": "th"
+        },
+        "stats_passing_32": {
+            "team": [
+                "passes_completed_short",
+                "passes_pct_short",
+                "passes_completed_medium",
+                "passes_pct_medium",
+                "passes_completed_long",
+                "passes_pct_long",
+                "pass_xa",
+                "assisted_shots",
+                "passes_into_final_third"
+            ],
+            "players": [],
+            "name": "passes_stats",
+            "player_tag": "th"
+        },
+        "stats_gca_32": {
+            "team": [
+                "sca",
+                "gca"
+            ],
+            "players": [],
+            "name": "creation_action_stats",
+            "player_tag": "th"
+        },
+        "stats_defense_32": {
+            "team": [
+                "tackles",
+                "tackles_won",
+                "challenges",
+                "challenges_lost",
+                "blocked_shots",
+                "blocked_passes",
+                "interceptions",
+                "tackles_interceptions",
+                "errors"
+            ],
+            "players": [
+                "tackles_def_3rd",
+                "tackles_mid_3rd",
+                "tackles_att_3rd"
+            ],
+            "name": "defense_stats",
+            "player_tag": "th"
+        },
+        "stats_possession_32": {
+            "team": [
+                "touches",
+                "touches_def_3rd",
+                "touches_mid_3rd",
+                "touches_att_3rd",
+                "touches_att_pen_area",
+                "take_ons",
+                "take_ons_won_pct",
+                "carries_into_final_third",
+                "progressive_passes_received"
+            ],
+            "players": [],
+            "name": "possession_stats",
+            "player_tag": "th"
+        },
+        "stats_misc_32": {
+            "team": [
+                "fouls",
+                "fouled",
+                "offsides",
+                "crosses",
+                "own_goals",
+                "ball_recoveries",
+                "aerials_won_pct"
+            ],
+            "players": [],
+            "name": "mixed_stats",
+            "player_tag": "th"
+        }
+    },
+    "results": {
+        "c_href": [
+            "date"
+        ],
+        "general": [
+            "start_time",
+            "referee",
+            "attendance"
+        ],
+        "private": [
+            "result",
+            "goals_for",
+            "goals_against",
+            "xg_for",
+            "xg_against",
+            "possession",
+            "formation"
+        ]
+    }
+}

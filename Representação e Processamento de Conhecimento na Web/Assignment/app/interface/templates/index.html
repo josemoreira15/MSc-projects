@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gfootdz</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function setupTableSelector(selectorId) {
+                document.getElementById(selectorId).addEventListener('change', function() {
+                    var selectedCategory = this.value;
+                    var tablesContainer = this.nextElementSibling;
+                    var tables = tablesContainer.querySelectorAll('div');
+                
+                    
+                    tables.forEach(function(table) {
+                        if (table.getAttribute('data-category') === selectedCategory) {
+                            table.style.display = 'table';
+                            table.style.width = '380px'
+                        } else {
+                            table.style.display = 'none';
+                        }
+                    });
+
+                    if (selectorId === 'category-select1') {
+                        document.getElementById('1' + this.value).innerText = this.options[this.selectedIndex].text;
+                    } else {
+                        document.getElementById('2' + this.value).innerText = this.options[this.selectedIndex].text;
+                    }
+
+                });
+            }
+
+            setupTableSelector('category-select1');
+            setupTableSelector('category-select2');
+        });
+
+
+        function playerStatsSelector() {
+              
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/playerStatsSelector", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                       
+
+                        
+                    }
+                };
+                xhr.send("file_index=" + selectedFile);
+            }
+
+    </script>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+            </div>
+            <div class="navbar-buttons">
+                <div class="dropdown">
+                    <button type="button" class="dropbtn">Clubes <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        {% for clube in data['data']['tabela'] %}
+                        <a href="/clubes/{{ clube['id'] }}" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" class="dropdown-image">
+                            {{ clube['clube'] }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/arbitros'">Árbitros</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/treinadores'">Treinadores</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/lideres'">Líderes</button>
+                <div class="admin-button">
+                    {% if data['client'] == None %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/entrar'">Administrador</button>
+                    {% else %}
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='/gerir'">Gerir</button>
+                    <form action="/sair" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary btn-block">Sair</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+  
+        <div class="banner">
+            <img src="{{ url_for('static', filename='images/liga.png') }}" alt="Liga Portugal Betclic" title="Liga Portugal Betclic">
+            <div class="metadata">
+                <h1>Liga Portugal Betclic</h1>
+                <p><b>País: </b>Portugal</p>
+                <p><b>Edição: </b>2023/2024</p>
+                <p><b>Ranking UEFA: </b>7º</p>
+                <p><b>Número de equipas: </b>18</p>
+            </div>
+        </div>
+        <p class="separator"></p>
+        <div class="content">
+            <div class="left-content">
+                <h1 style="color: #00235a;">Classificação Geral</h1>
+                <table>
+                    <tr>
+                        <th title="Posição">#</th>
+                        <th>Clube</th>
+                        <th title="Vitórias">V</th>
+                        <th title="Empates">E</th>
+                        <th title="Derrotas">D</th>
+                        <th title="Golos marcados">GM</th>
+                        <th title="Golos sofridos">GS</th>
+                        <th title="Pontos">Pts</th>
+                    </tr>
+                    {% for clube in data['data']['tabela'] %}
+                    <tr>
+                        <td>
+                            {% if clube['classificacao'] == '1' or clube['classificacao'] == '2' %}
+                                <b title="Fase de Grupos - UEFA Champions League" style="background-color: rgb(9, 29, 101); color: white; padding-left: 14px; padding-right: 14px; padding-bottom: 6px; padding-top: 6px; border-radius: 10px;">{{ clube['classificacao'] }}</b>
+                            {% elif clube['classificacao'] == '3' %}
+                                <b title="Fase de Grupos - UEFA Europa League" style="background-color: rgb(89, 13, 6); color: white; padding-left: 14px; padding-right: 14px; padding-bottom: 6px; padding-top: 6px; border-radius: 10px;">{{ clube['classificacao'] }}</b>
+                            {% elif clube['classificacao'] == '4' %}
+                                <b title="Qualificação - UEFA Europa League" style="background-color: rgb(211, 77, 19); color: white; padding-left: 14px; padding-right: 14px; padding-bottom: 6px; padding-top: 6px; border-radius: 10px;">{{ clube['classificacao'] }}</b>
+                            {% elif clube['classificacao'] == '5' %}
+                                <b title="Qualificação - UEFA Europa Conference League" style="background-color: rgb(9, 86, 42); color: white; padding-left: 14px; padding-right: 14px; padding-bottom: 6px; padding-top: 6px; border-radius: 10px;">{{ clube['classificacao'] }}</b>
+                            {% elif clube['classificacao'] == '16' %}
+                                <b title="Playoff de despromoção - Liga Portugal 2 Sabseg" style="background-color: rgb(255, 65, 65); color: white; padding-left: 10px; padding-right: 10px; padding-bottom: 6px; padding-top: 6px; border-radius: 10px;">{{ clube['classificacao'] }}</b>
+                            {% elif clube['classificacao'] == '17' or clube['classificacao'] == '18' %}
+                                <b title="Despromoção - Liga Portugal 2 Sabseg" style="background-color: rgb(189, 0, 0); color: white; padding-left: 10px; padding-right: 10px; padding-bottom: 6px; padding-top: 6px; border-radius: 10px;">{{ clube['classificacao'] }}</b>
+                            {% else %}
+                                <b>{{ clube['classificacao'] }}</b>
+                            {% endif %}
+                        </td>
+                        <td style="text-align: left;">
+                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['clube'] }}" title="{{ clube['clube'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">
+                            <span style="vertical-align: middle;"><a href="/clubes/{{ clube['id'] }}">{{ clube['clube'] }}</a></span>
+                        </td>                                                                   
+                        <td>{{ clube['vitorias'] }}</td>
+                        <td>{{ clube['empates'] }}</td>
+                        <td>{{ clube['derrotas'] }}</td>
+                        <td>{{ clube['gms'] }}</td>
+                        <td>{{ clube['gs'] }}</td>
+                        <td>{{ clube['pontos'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="right-content">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <select id="category-select1">
+                            {% for query, value, id in data['data']['player_stat_selector'] %}
+                            <option value='{{ id }}'>{{ id }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="table-selector1">
+                            {% for id, items in data['data']['player_selector'].items() %}
+                            {% if id == data['data']['player_stat_selector'][0][2] %}
+                            <div data-category="{{ id }}">
+                            {% else %}
+                            <div style="display: none;" data-category="{{ id }}">
+                            {% endif %}
+                                <h2 id="1{{ id }}" style="color: #00235a;">{{ id }}</h2>
+                                <table style="width: 380px">
+                                    <th>#</th>
+                                    <th>Jogador</th>
+                                    <th>{{ items[0] }}</th>
+                                    {% for jogador in items[1] %}
+                                    <tr>                                                                
+                                        <td><b>{{ loop.index }}</b></td>
+                                        <td style="text-align: left;">
+                                            <img src="{{ url_for('static', filename='images/clubes/' ~ jogador['clube'] ~ '.png') }}" alt="{{ jogador['ne'] }}" title="{{ jogador['ne'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">
+                                            <span style="vertical-align: middle;"><a href="/clubes/{{ jogador['clube'] }}">{{ jogador['nome'] }}</a></span>
+                                        </td>
+                                        <td>{{ jogador['stat'] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <select id="category-select2">
+                            {% for query, value, id in data['data']['league_stat_selector'] %}
+                            <option value='{{ id }}'>{{ id }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="table-selector2">
+                            {% for id, items in data['data']['league_selector'].items() %}
+                            {% if id == data['data']['league_stat_selector'][0][2] %}
+                            <div data-category="{{ id }}">
+                            {% else %}
+                            <div style="display: none;" data-category="{{ id }}">
+                            {% endif %}
+                                <h2 id="2{{ id }}" style="color: #00235a;">{{ id }}</h2>
+                                <table style="width: 380px;">
+                                    <th>#</th>
+                                    <th>Clube</th>
+                                    <th>{{ items[0] }}</th>
+                                    {% for clube in items[1] %}
+                                    <tr>                                                                
+                                        <td><b>{{ loop.index }}</b></td>
+                                        <td style="text-align: left;">
+                                            <img src="{{ url_for('static', filename='images/clubes/' ~ clube['id'] ~ '.png') }}" alt="{{ clube['nome'] }}" title="{{ clube['nome'] }}" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">
+                                            <span style="vertical-align: middle;"><a href="/clubes/{{ clube['id'] }}">{{ clube['nome'] }}</a></span>
+                                        </td>
+                                        <td>{{ clube['stat'] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>.</p>
+        </footer>          
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Tabela Periódica : {{ data.name }}</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>    
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>{{ data.name }}</h1>
+                <p><a href="/">[Página Principal]</a></p>
+                <p><a href="/elementos">[Página dos Elementos]</a></p>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Símbolo</th>
+                        <td>{{ data.data[0].symb.value }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numero Atómico</th>
+                        <td>{{ data.data[0].an.value }}</td>
+                    </tr>
+                    <tr>
+                        <th>Grupo</th>
+                        {% set group_id = data.data[0].g.value.split('#')[-1] %}
+                        <td><a href="/grupos/{{ group_id }}">{{ group_id }}</a></td>
+                    </tr>
+                    <tr>
+                        <th>Peso Atómico</th>
+                        {% if data.data[0].aw %}
+                        <td>{{ data.data[0].aw.value }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Bloco</th>
+                        {% if data.data[0].b %}
+                        {% set bloco = data.data[0].b.value.split('#')[-1] %}
+                        <td>{{ bloco }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>ID CAS Registry</th>
+                        {% if data.data[0].cr %}
+                        <td>{{ data.data[0].cr.value }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Classificação</th>
+                        {% if data.data[0].c %}
+                        {% set class = data.data[0].c.value.split('#')[-1] %}
+                        <td>{{ class }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Cor</th>
+                        {% if data.data[0].col %}
+                        <td>{{ data.data[0].col.value }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Período</th>
+                        {% if data.data[0].p %}
+                        {% set per = data.data[0].p.value.split('#')[-1] %}
+                        <td>{{ per }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Estado Padrão</th>
+                        {% if data.data[0].ss %}
+                        {% set ep = data.data[0].ss.value.split('#')[-1] %}
+                        <td>{{ ep }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    </tr>
+                </table>
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por topzN::RPCW2024</h5>
+            </footer>
+        </div>
+    </body>
+</html>

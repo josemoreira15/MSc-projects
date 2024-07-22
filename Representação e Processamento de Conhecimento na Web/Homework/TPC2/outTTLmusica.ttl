@@ -1,0 +1,3829 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/escolaMusica/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/escolaMusica/> .
+
+<http://rpcw.di.uminho.pt/2024/escolaMusica> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#frequentaCurso
+:frequentaCurso rdf:type owl:ObjectProperty ;
+                rdfs:domain :Aluno ;
+                rdfs:range :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#temInstrumento
+:temInstrumento rdf:type owl:ObjectProperty ;
+                rdfs:domain :Curso ;
+                rdfs:range :Instrumento .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#anoCurso
+:anoCurso rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Aluno ;
+          rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#dataNasc
+:dataNasc rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Aluno ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#designacao
+:designacao rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Curso ;
+            rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#duracao
+:duracao rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Curso ;
+         rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#nomeAluno
+:nomeAluno rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Aluno ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#nomeInstrumento
+:nomeInstrumento rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Instrumento ;
+                 rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#Aluno
+:Aluno rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#Curso
+:Curso rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#Instrumento
+:Instrumento rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A1510
+:A1510 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-4-19" ;
+       :nomeAluno "ADEMAR FONTES DE MAGALHAES GONCALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32597
+:A32597 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-9-5" ;
+       :nomeAluno "ADERITO NELSON MIRANDA DE OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36539
+:A36539 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-10-26" ;
+       :nomeAluno "ADMILSON CESAR ANDRADE RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38165
+:A38165 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-2-25" ;
+       :nomeAluno "AFONSO DELERUE ARRIAGA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38176
+:A38176 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2000-7-18" ;
+       :nomeAluno "AGOSTINHO MANUEL ALVES DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38196
+:A38196 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-12-7" ;
+       :nomeAluno "ALEXANDRE COELHO CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35271
+:A35271 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS6 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-12-20" ;
+       :nomeAluno "ALEXANDRE JORGE CAMELO FARIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38193
+:A38193 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-2-2" ;
+       :nomeAluno "ALEXANDRE MANUEL PEREIRA DE MIRANDA PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A18141
+:A18141 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-6-23" ;
+       :nomeAluno "ALEXANDRE MIGUEL DA COSTA FERREIRA DOS SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38218
+:A38218 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-7-14" ;
+       :nomeAluno "ALEXANDRINA MARIA FERREIRA LEMOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36487
+:A36487 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1996-1-7" ;
+       :nomeAluno "ALI DOS REIS MOTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35272
+:A35272 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-11-7" ;
+       :nomeAluno "ANA LUISA PARREIRA NUNES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27589
+:A27589 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-1-13" ;
+       :nomeAluno "ANA MARGARIDA FIDALGO PINHEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A25073
+:A25073 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-12-12" ;
+       :nomeAluno "ANA MARGARIDA LIMA ALEM" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38169
+:A38169 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-6-5" ;
+       :nomeAluno "ANDRE ABILIO NUNES ROCHA RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33822
+:A33822 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2001-11-13" ;
+       :nomeAluno "ANDRE FERNANDES MARTINS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38214
+:A38214 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-2-14" ;
+       :nomeAluno "ANDRE FILIPE DE SOUSA VIVEIROS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35274
+:A35274 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-7-20" ;
+       :nomeAluno "ANDRE FILIPE OLIVEIRA MARTINS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29871
+:A29871 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-8-1" ;
+       :nomeAluno "ANDRE LEITE FERREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38215
+:A38215 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1998-5-28" ;
+       :nomeAluno "ANDRE RIBEIRO RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38117
+:A38117 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-2-20" ;
+       :nomeAluno "ANTONIO ANDRE MARQUES RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35277
+:A35277 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS2 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-5-5" ;
+       :nomeAluno "ANTONIO MANUEL MARTINS PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35278
+:A35278 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2001-3-13" ;
+       :nomeAluno "ANTONIO MANUEL RODRIGUES FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38138
+:A38138 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1998-10-7" ;
+       :nomeAluno "ANTONIO NUNO BACELAR MARTINS BARREIRO COVAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35280
+:A35280 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1997-2-10" ;
+       :nomeAluno "ANTONIO RICARDO PEREIRA GONCALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33057
+:A33057 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-7-5" ;
+       :nomeAluno "ANTONIO RUI MIRANDA DE LEMOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38143
+:A38143 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2000-1-9" ;
+       :nomeAluno "ANTONIO SERGIO MATOS SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30166
+:A30166 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-9-6" ;
+       :nomeAluno "ANTONIO TIAGO MORGADO PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36971
+:A36971 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2001-4-2" ;
+       :nomeAluno "AUGUSTO JORGE PEREIRA DA COSTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38132
+:A38132 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-4-6" ;
+       :nomeAluno "AVELINO JOSE DA COSTA REGO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33140
+:A33140 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS7 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-2-11" ;
+       :nomeAluno "AVELINO RODRIGO ARAUJO SEMELHE DE SOUSA PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33141
+:A33141 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-8-23" ;
+       :nomeAluno "BARBARA ALEXANDRA EUSEBIO FREITAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33291
+:A33291 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-9-28" ;
+       :nomeAluno "BARBARA SOFIA ARAUJO DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33142
+:A33142 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-11-16" ;
+       :nomeAluno "BRUNO CESAR PEREIRA DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A20044
+:A20044 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-7-28" ;
+       :nomeAluno "BRUNO DE ALMEIDA RAMOS PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35283
+:A35283 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB13 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-2-22" ;
+       :nomeAluno "BRUNO EDGAR BERNARDO TEIXEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35284
+:A35284 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-6-4" ;
+       :nomeAluno "BRUNO EMANUEL TEIXEIRA DE CASTRO ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38156
+:A38156 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2000-6-11" ;
+       :nomeAluno "BRUNO FILIPE DA COSTA HERMENEGILDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35285
+:A35285 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-4-14" ;
+       :nomeAluno "BRUNO GABRIEL LEAL MACHADO DOS SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36422
+:A36422 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-2-14" ;
+       :nomeAluno "BRUNO JOSE DE MACEDO SOARES AMOR" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33143
+:A33143 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1997-3-20" ;
+       :nomeAluno "BRUNO MIGUEL CAMPOS RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33145
+:A33145 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-6-20" ;
+       :nomeAluno "BRUNO MIGUEL FLORES DIAMANTINO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33146
+:A33146 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS18 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-11-15" ;
+       :nomeAluno "BRUNO MIGUEL MAGALHAES AZEVEDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33148
+:A33148 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1998-3-21" ;
+       :nomeAluno "BRUNO MIGUEL TEIXEIRA PAIVA DE FARIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38124
+:A38124 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2000-1-21" ;
+       :nomeAluno "BRUNO RICARDO CUNHA MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30176
+:A30176 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB18 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-4-14" ;
+       :nomeAluno "BRUNO RICARDO DUARTE MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35808
+:A35808 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS7 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-11-11" ;
+       :nomeAluno "CANDIDO MIGUEL REBELO BARROS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38126
+:A38126 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS16 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-6-14" ;
+       :nomeAluno "CARLOS ALFREDO MACIEIRA DE FARIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33689
+:A33689 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-5-10" ;
+       :nomeAluno "CARLOS ANDRE BRITO RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38125
+:A38125 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-5-13" ;
+       :nomeAluno "CARLOS CESAR MADUREIRA ROMANO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A24654
+:A24654 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS14 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-11-2" ;
+       :nomeAluno "CARLOS DE SOUSA CABRAL BRANDAO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A20021
+:A20021 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-12-4" ;
+       :nomeAluno "CARLOS JOSE DA CUNHA RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35291
+:A35291 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1998-6-17" ;
+       :nomeAluno "CARLOS MIGUEL TAVARES LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A34640
+:A34640 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS3 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-8-9" ;
+       :nomeAluno "CARLOS PRUDENCIO DO ESPIRITO CRISOSTOMO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38207
+:A38207 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS2 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-8-22" ;
+       :nomeAluno "CATARINA ISABEL DE OLIVEIRA MATEUS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32010
+:A32010 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-9-1" ;
+       :nomeAluno "CATARINA SOFIA MARTINHO LUIS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35052
+:A35052 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-5-24" ;
+       :nomeAluno "CESAR FILIPE DA CRUZ GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35440
+:A35440 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS18 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-6-26" ;
+       :nomeAluno "DANIEL BARBOSA ALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32648
+:A32648 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-1-23" ;
+       :nomeAluno "DANIEL FILIPE PERES FERREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33152
+:A33152 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-10-12" ;
+       :nomeAluno "DANIEL RICARDO DE CASTRO MENDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38211
+:A38211 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-8-16" ;
+       :nomeAluno "DANIEL TORRES GONCALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38210
+:A38210 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-7-10" ;
+       :nomeAluno "DANIELA CRISTINA GARCIA TEIXEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22854
+:A22854 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-3-10" ;
+       :nomeAluno "DAVI CARNEIRO PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35293
+:A35293 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-11-22" ;
+       :nomeAluno "DAVID DANIEL CARDOSO DE OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35294
+:A35294 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1996-11-20" ;
+       :nomeAluno "DIAMANTINO JOSE MADEIRA ABOBELEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38166
+:A38166 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2000-6-26" ;
+       :nomeAluno "DIOGO FILIPE DA SILVA CARDOSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38164
+:A38164 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-8-28" ;
+       :nomeAluno "DIOGO PAULO DA FONTE LAPA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38167
+:A38167 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-7-20" ;
+       :nomeAluno "DUARTE ALEXANDRE DA CUNHA ALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33155
+:A33155 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-4-2" ;
+       :nomeAluno "DUARTE FILIPE AFONSO CHAVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35298
+:A35298 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-5-10" ;
+       :nomeAluno "DUARTE NUNO MALHEIRO DE BARREIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38190
+:A38190 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS15 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-3-14" ;
+       :nomeAluno "ELISEU CARNEIRO DOS SANTOS ROCHA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35300
+:A35300 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-2-15" ;
+       :nomeAluno "EMANUEL CERDEIRA MESQUITA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30305
+:A30305 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-4-15" ;
+       :nomeAluno "EMANUEL JOSE ANTUNES FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36757
+:A36757 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-6-6" ;
+       :nomeAluno "ERNESTO MANUEL DA SILVA LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33157
+:A33157 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-1-23" ;
+       :nomeAluno "EURICO MANUEL FOLGADO AFONSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27608
+:A27608 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-5-12" ;
+       :nomeAluno "EURICO MANUEL TELES MORAIS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35302
+:A35302 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1996-8-19" ;
+       :nomeAluno "FABIO ROBERTO LEITE MATOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33158
+:A33158 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-1-11" ;
+       :nomeAluno "FAUSTO MIGUEL PACHECO FARIA VIANA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35465
+:A35465 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-2-21" ;
+       :nomeAluno "FERNANDO ANTONIO ALVES LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33858
+:A33858 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB13 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-7-13" ;
+       :nomeAluno "FERNANDO JORGE PINTO LIMA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A26737
+:A26737 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS16 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-7-26" ;
+       :nomeAluno "FERNANDO MIGUEL SOUSA LISBOA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30187
+:A30187 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-1-26" ;
+       :nomeAluno "FERNANDO SERGIO MADALENO PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35303
+:A35303 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-5-8" ;
+       :nomeAluno "FILIPE ANTONIO GONCALVES DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36445
+:A36445 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-9-25" ;
+       :nomeAluno "FILIPE BARROSO DE OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38595
+:A38595 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-4-2" ;
+       :nomeAluno "FILIPE GONCALO GONCALVES DA COSTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38187
+:A38187 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-6-19" ;
+       :nomeAluno "FLAVIO MIGUEL XAVIER FERREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36424
+:A36424 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-5-14" ;
+       :nomeAluno "FRANCISCO EURICO PINTO CORTEZ MARTINS LEITE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35308
+:A35308 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-6-2" ;
+       :nomeAluno "FRANCISCO JOSE MAIO LEITE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35443
+:A35443 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-4-6" ;
+       :nomeAluno "FRANCISCO JOSE MARTINS GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27616
+:A27616 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-7-3" ;
+       :nomeAluno "FRANCISCO JOSE PRATA DA PAZ" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38163
+:A38163 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1996-4-23" ;
+       :nomeAluno "GASPAR AUGUSTO SIMOES CORREIA VIEIRA LEITE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39288
+:A39288 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS15 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-2-22" ;
+       :nomeAluno "GENILDO SOARES NEVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33162
+:A33162 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-3-25" ;
+       :nomeAluno "GONCALO LEAL MACHADO RIBEIRO PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35311
+:A35311 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-3-5" ;
+       :nomeAluno "GONCALO LUIS MALHEIRO DE OLIVEIRA NOVAIS MACHADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39508
+:A39508 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-8-15" ;
+       :nomeAluno "GONCALO MANUEL CORREIA CALHEIROS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33163
+:A33163 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-4-6" ;
+       :nomeAluno "GONCALO PAULO CUNHA CARDOSO FERREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38174
+:A38174 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-12-14" ;
+       :nomeAluno "GUILHERME REIS BARBOSA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33165
+:A33165 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-7-5" ;
+       :nomeAluno "HELDER ARTUR PEIXOTO MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35312
+:A35312 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-4-11" ;
+       :nomeAluno "HELDER FILIPE DE CASTRO MARQUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38185
+:A38185 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-6-21" ;
+       :nomeAluno "HELDER JOSE FERREIRA BARBOSA RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39503
+:A39503 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-3-4" ;
+       :nomeAluno "HELDER NUNO MARTINS DO VALE TOME" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36758
+:A36758 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-4-20" ;
+       :nomeAluno "HUGO ALEXANDRE PEREIRA TRIUNFANTE MARTINS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38197
+:A38197 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-8-6" ;
+       :nomeAluno "HUGO ALEXANDRE SOBREIRO DE SEIXAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33272
+:A33272 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1998-2-21" ;
+       :nomeAluno "HUGO ANDRE PEIXOTO FREITAS PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35315
+:A35315 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS6 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-1-28" ;
+       :nomeAluno "HUGO EMANUEL QUEIROS TEIXEIRA DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38202
+:A38202 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-4-4" ;
+       :nomeAluno "HUGO FILIPE NASCIMENTO PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35316
+:A35316 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2001-2-21" ;
+       :nomeAluno "HUGO GUILHERME DOS SANTOS RIGOR" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35395
+:A35395 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-6-25" ;
+       :nomeAluno "HUGO JOSE FERNANDES CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38204
+:A38204 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-10-2" ;
+       :nomeAluno "HUGO JOSE PEREIRA PACHECO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A26208
+:A26208 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-7-8" ;
+       :nomeAluno "IGOR MURILO DE ALMEIDA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33703
+:A33703 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1996-10-28" ;
+       :nomeAluno "ISABEL MARIA ROSENDO CARDOSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38134
+:A38134 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS17 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-6-10" ;
+       :nomeAluno "IVO MANUEL DANTAS MONTEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35318
+:A35318 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS14 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-4-25" ;
+       :nomeAluno "JASON PETER COSTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33168
+:A33168 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2000-10-13" ;
+       :nomeAluno "JOANA SOUTO DE MIRANDA GONZALEZ" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35319
+:A35319 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-6-12" ;
+       :nomeAluno "JOAO ALEXANDRE VAZ OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35320
+:A35320 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-2-9" ;
+       :nomeAluno "JOAO ANTONIO LAVRADOR VILANOVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32753
+:A32753 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-11-26" ;
+       :nomeAluno "JOAO ARNALDO FREITAS DE ABREU" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38180
+:A38180 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS7 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-11-9" ;
+       :nomeAluno "JOAO CARLOS AZEVEDO SALGADO GUIMARAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35321
+:A35321 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1996-3-27" ;
+       :nomeAluno "JOAO FILIPE FONTES MACHADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35322
+:A35322 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-5-17" ;
+       :nomeAluno "JOAO GILBERTO LAMARAO DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38133
+:A38133 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-3-7" ;
+       :nomeAluno "JOAO GONCALO BOTICA RIBEIRO DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30201
+:A30201 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS7 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-3-5" ;
+       :nomeAluno "JOAO GUILHERME RABACA CAMPOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38123
+:A38123 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1998-7-26" ;
+       :nomeAluno "JOAO MANUEL DA SILVA SANCHES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A34935
+:A34935 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-2-17" ;
+       :nomeAluno "JOAO MANUEL DE CAMPOS GONCALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35323
+:A35323 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-1-16" ;
+       :nomeAluno "JOAO MARIO MENDES DE OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33172
+:A33172 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-2-11" ;
+       :nomeAluno "JOAO MIGUEL RAPOSO DA SILVA MARQUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38191
+:A38191 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-3-21" ;
+       :nomeAluno "JOAO MIGUEL RODRIGUES BATISTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38186
+:A38186 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-5-3" ;
+       :nomeAluno "JOAO NUNO MARQUES DOS SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39750
+:A39750 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-3-5" ;
+       :nomeAluno "JOAO PAULO BARBOSA OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22662
+:A22662 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-10-12" ;
+       :nomeAluno "JOAO PAULO CARRAPATO ALMEIDA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35325
+:A35325 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-9-25" ;
+       :nomeAluno "JOAO PAULO COELHO GOMES TEIXEIRA E OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A17855
+:A17855 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-9-1" ;
+       :nomeAluno "JOAO PAULO DA SILVA CASTRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38175
+:A38175 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2001-5-26" ;
+       :nomeAluno "JOAO PAULO DA SILVA GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33173
+:A33173 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS20 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-1-2" ;
+       :nomeAluno "JOAO PAULO MINHAVA PEIXOTO ASSIS CARDOSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39622
+:A39622 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-1-6" ;
+       :nomeAluno "JOAO PAULO SILVA DE VASCONCELOS GUSMAO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33175
+:A33175 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-10-25" ;
+       :nomeAluno "JOAO PEDRO BACAO COELHO DE BARROS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A18938
+:A18938 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-10-28" ;
+       :nomeAluno "JOAO PEDRO BRITO ANTUNES GUIMARAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33176
+:A33176 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS20 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-6-26" ;
+       :nomeAluno "JOAO PEDRO GOMES FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35832
+:A35832 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-5-1" ;
+       :nomeAluno "JOAO PEDRO GONCALVES DE CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38170
+:A38170 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS17 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-4-19" ;
+       :nomeAluno "JOAO PEDRO OLIVEIRA PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36425
+:A36425 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS20 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-6-6" ;
+       :nomeAluno "JOAO PEDRO ROBALO ESPINHO PEREIRA DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38212
+:A38212 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1998-5-3" ;
+       :nomeAluno "JOAO PEDRO SILVA ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38220
+:A38220 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-11-4" ;
+       :nomeAluno "JOAO RAFAEL FERREIRA VELOSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38199
+:A38199 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-3-26" ;
+       :nomeAluno "JOAO RICARDO DA SILVA CAMPOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38198
+:A38198 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-10-15" ;
+       :nomeAluno "JOAQUIM MACHADO GONCALVES SAMPAIO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35328
+:A35328 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-4-17" ;
+       :nomeAluno "JOEL ARAUJO ROCHA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38157
+:A38157 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-7-15" ;
+       :nomeAluno "JOEL HUMBERTO DA SILVA BEIRAO DO VALE CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A20464
+:A20464 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-3-22" ;
+       :nomeAluno "JOEL TITO DA CRUZ PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38139
+:A38139 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1997-4-7" ;
+       :nomeAluno "JORGE ALBERTO FARIA MIRANDA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35330
+:A35330 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-8-24" ;
+       :nomeAluno "JORGE ANDRE ALVES DE MELO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A16409
+:A16409 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-2-18" ;
+       :nomeAluno "JORGE MANUEL DE CASTRO MAIO GOMES DA COSTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33709
+:A33709 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-8-2" ;
+       :nomeAluno "JORGE MANUEL VIANA RIBEIRO MARTINS FORTE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30209
+:A30209 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-4-26" ;
+       :nomeAluno "JORGE MIGUEL GONCALVES DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A21008
+:A21008 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1998-6-11" ;
+       :nomeAluno "JORGE MIGUEL SILVA MELO PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35331
+:A35331 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-3-20" ;
+       :nomeAluno "JOSE ALEXANDRE DE CARVALHO AMORIM" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38189
+:A38189 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1998-8-3" ;
+       :nomeAluno "JOSE ANTONIO DA CUNHA E SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A19705
+:A19705 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS11 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-1-12" ;
+       :nomeAluno "JOSE ANTONIO PEREIRA CIBRAO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30211
+:A30211 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-6-3" ;
+       :nomeAluno "JOSE CARLOS CARVALHO DOS SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30212
+:A30212 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-4-6" ;
+       :nomeAluno "JOSE CARLOS DA ROCHA MACHADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36960
+:A36960 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-9-13" ;
+       :nomeAluno "JOSE CARLOS DE FREITAS FONTAO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A34434
+:A34434 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-7-1" ;
+       :nomeAluno "JOSE CARLOS MARQUES DIAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35332
+:A35332 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB13 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-11-5" ;
+       :nomeAluno "JOSE DIOGO RIBEIRO LIZ DE ALMEIDA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39506
+:A39506 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB18 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-6-1" ;
+       :nomeAluno "JOSE EDUARDO CORREIA CALHEIROS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36761
+:A36761 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-12-11" ;
+       :nomeAluno "JOSE EDUARDO TEIXEIRA RITO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38224
+:A38224 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB12 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-2-12" ;
+       :nomeAluno "JOSE FILIPE HENRIQUES VILAS BOAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35333
+:A35333 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-11-9" ;
+       :nomeAluno "JOSE FILIPE QUEIJO FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A23916
+:A23916 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-9-4" ;
+       :nomeAluno "JOSE GRACA DA NOBREGA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38222
+:A38222 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS17 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-8-4" ;
+       :nomeAluno "JOSE LUIS CARDOSO SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38205
+:A38205 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-2-19" ;
+       :nomeAluno "JOSE LUIS LOPES DE ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27629
+:A27629 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-8-25" ;
+       :nomeAluno "JOSE LUIS PINTO MONTEIRO ALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38206
+:A38206 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-4-11" ;
+       :nomeAluno "JOSE MANUEL ARAUJO SOARES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35398
+:A35398 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS6 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-10-19" ;
+       :nomeAluno "JOSE MANUEL ESTEVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32480
+:A32480 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-5-10" ;
+       :nomeAluno "JOSE MANUEL LIMA GANDARELA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30213
+:A30213 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-1-4" ;
+       :nomeAluno "JOSE MANUEL LOUREIRO DE AZEVEDO TEIXEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22670
+:A22670 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-10-28" ;
+       :nomeAluno "JOSE MANUEL TEIXEIRA FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33182
+:A33182 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS18 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-8-14" ;
+       :nomeAluno "JOSE MIGUEL DOS SANTOS FERRAZ" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A28722
+:A28722 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS3 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-10-26" ;
+       :nomeAluno "JOSE MIGUEL FERREIRA PONTES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38121
+:A38121 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-1-26" ;
+       :nomeAluno "JOSE MIGUEL RODRIGUES OLIVEIRA DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35334
+:A35334 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-9-20" ;
+       :nomeAluno "JOSE MIGUEL SILVA PEIXOTO DE CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38136
+:A38136 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-6-7" ;
+       :nomeAluno "JOSE NUNO MARTINS PINTO FRAGA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35335
+:A35335 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1996-9-26" ;
+       :nomeAluno "JOSE PAULO CARNEIRO DE MELO MAMEDE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35337
+:A35337 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS6 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-12-11" ;
+       :nomeAluno "JOSE PEDRO DOMINGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38142
+:A38142 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1996-12-15" ;
+       :nomeAluno "JOSE PEDRO FARIA E VASCONCELOS CORREIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38140
+:A38140 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS14 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-9-5" ;
+       :nomeAluno "JOSE PEDRO MACHADO GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38137
+:A38137 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2000-2-23" ;
+       :nomeAluno "JOSE PEDRO RIBEIRO DA ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38128
+:A38128 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS4 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-6-13" ;
+       :nomeAluno "JOSE PEDRO RODRIGUES MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30214
+:A30214 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB12 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-3-15" ;
+       :nomeAluno "JOSE PEDRO SILVA DE OLIVEIRA CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A23508
+:A23508 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1998-4-7" ;
+       :nomeAluno "JOSE ROMEU FERNANDES PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38155
+:A38155 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB12 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1996-9-16" ;
+       :nomeAluno "JULIO ANDRE RODRIGUES ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35843
+:A35843 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-3-9" ;
+       :nomeAluno "LARA SOFIA ALPOIM MIRANDA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38150
+:A38150 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-4-27" ;
+       :nomeAluno "LEANDRO EMANUEL DA SILVA SALGADO BARBOSA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A34035
+:A34035 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-2-27" ;
+       :nomeAluno "LEONOR ISABEL CONSTANTINO CAEIRO BOGA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A24839
+:A24839 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-12-16" ;
+       :nomeAluno "LEONOR ISABEL FERREIRA DE MELO OSORIO ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35339
+:A35339 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS2 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-6-23" ;
+       :nomeAluno "LIDIA NOGUEIRA LARANJEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35340
+:A35340 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-2-22" ;
+       :nomeAluno "LILIANA SOLANGE SEQUEIRA HENRIQUES DE MACEDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33650
+:A33650 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2000-7-24" ;
+       :nomeAluno "LUIS ANDRE DA CUNHA MARQUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35342
+:A35342 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS14 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-2-20" ;
+       :nomeAluno "LUIS CARLOS GONCALO LEONARDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38223
+:A38223 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-8-13" ;
+       :nomeAluno "LUIS DIOGO MONTEIRO DUARTE COUTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39341
+:A39341 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-11-28" ;
+       :nomeAluno "LUIS FERNANDO ROMANEL RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39408
+:A39408 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2000-3-16" ;
+       :nomeAluno "LUIS FILIPE FARIA MONTEIRO CAPELO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33186
+:A33186 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-8-10" ;
+       :nomeAluno "LUIS FILIPE GAMA PAIS CABRAL" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38219
+:A38219 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS18 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-11-4" ;
+       :nomeAluno "LUIS FILIPE PEREIRA GONCALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29631
+:A29631 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-6-19" ;
+       :nomeAluno "LUIS FILIPE RIBEIRO NOVAIS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39747
+:A39747 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-5-19" ;
+       :nomeAluno "LUIS PEDRO FERREIRA LEITE DOS SANTOS ALEIXO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33188
+:A33188 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS15 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-3-12" ;
+       :nomeAluno "LUIS PEDRO LOPES PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38172
+:A38172 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-2-21" ;
+       :nomeAluno "LUIS TIAGO AFONSO MASCARENHAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38168
+:A38168 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-8-2" ;
+       :nomeAluno "LUIZ ALBERTO DE CASTRO SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38254
+:A38254 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-4-27" ;
+       :nomeAluno "MANUEL DOMINGOS DE CARVALHO FELGUEIRAS DA SILVA SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30219
+:A30219 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2001-3-16" ;
+       :nomeAluno "MANUEL FERNANDO SOTO MAIOR FRANQUEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35348
+:A35348 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-2-24" ;
+       :nomeAluno "MANUEL JOSE GOMES MEIRELES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27637
+:A27637 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB18 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-12-22" ;
+       :nomeAluno "MANUEL JOSE TORRES SOUSA DA CUNHA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29004
+:A29004 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-4-22" ;
+       :nomeAluno "MARANGAZE JOAQUIM MUNHEPE MULHANGA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35349
+:A35349 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-1-26" ;
+       :nomeAluno "MARCIA MARLENE DE ALMEIDA MARTINS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35350
+:A35350 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-11-20" ;
+       :nomeAluno "MARCIAL COELHO GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39406
+:A39406 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-6-22" ;
+       :nomeAluno "MARCO ALEXANDRE AGUIAR VAZ" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29011
+:A29011 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1998-12-22" ;
+       :nomeAluno "MARCO ALEXANDRE BARREIRA MEDEIROS TEIXEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38178
+:A38178 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-6-9" ;
+       :nomeAluno "MARCO ALEXANDRE TEIXEIRA PALOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38152
+:A38152 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS16 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-5-14" ;
+       :nomeAluno "MARCO ANTONIO SAMPAIO FREITAS DE CASTRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38179
+:A38179 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS15 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-11-13" ;
+       :nomeAluno "MARCO ANTONIO TEIXEIRA MARTINS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22685
+:A22685 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-8-28" ;
+       :nomeAluno "MARCO FRANCISCO DA SILVA LIZARDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22688
+:A22688 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2001-4-3" ;
+       :nomeAluno "MARCO RICARDO BARBOSA COELHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36864
+:A36864 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS11 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-7-19" ;
+       :nomeAluno "MARIA BEATRIZ ALVES DE SA CAMPOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38184
+:A38184 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS7 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-10-1" ;
+       :nomeAluno "MARIA CRISTINA CARNEIRO BARREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A12753
+:A12753 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-3-8" ;
+       :nomeAluno "MARIA LUISA VILLAVERDE MACHADO FERNANDES NOVAIS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38161
+:A38161 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS4 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-6-24" ;
+       :nomeAluno "MARIANA PEREIRA NEVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38171
+:A38171 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-12-22" ;
+       :nomeAluno "MARIO ANDRE PATRICIO TEIXEIRA JULIO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38194
+:A38194 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1999-7-23" ;
+       :nomeAluno "MARIO DA FONTE LAMEIRAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A23544
+:A23544 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2000-3-12" ;
+       :nomeAluno "MARIO RUI ANUNCIACAO MONTEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29048
+:A29048 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1996-2-14" ;
+       :nomeAluno "MARIO RUI RIBEIRO FIALHO DA CONCEICAO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36454
+:A36454 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-4-17" ;
+       :nomeAluno "MICHEL FERREIRA PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35352
+:A35352 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2001-4-14" ;
+       :nomeAluno "MIGUEL AFONSO PIRES DA ROSA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38217
+:A38217 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-4-13" ;
+       :nomeAluno "MIGUEL ANGELO MARQUES DE MATOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38209
+:A38209 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS17 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-9-24" ;
+       :nomeAluno "MIGUEL ANGELO PINTO MARQUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30226
+:A30226 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS3 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-3-12" ;
+       :nomeAluno "MIGUEL ANGELO RIBEIRO DE SOUSA E SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38221
+:A38221 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB13 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1996-2-13" ;
+       :nomeAluno "MIGUEL ANGELO VIVAS GOMES ALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A21432
+:A21432 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-12-14" ;
+       :nomeAluno "MIGUEL MANUEL GOMES RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39342
+:A39342 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-11-27" ;
+       :nomeAluno "MIGUEL PEDRO AMARAL FIGUEIREDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32608
+:A32608 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2000-7-17" ;
+       :nomeAluno "MIGUEL PEDRO DE ALMEIDA FERREIRA CORREIA DOURADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33195
+:A33195 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS16 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-10-18" ;
+       :nomeAluno "MIGUEL PINTO DE SOUSA MARQUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22695
+:A22695 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2004-6-23" ;
+       :nomeAluno "NANCY DO SAMEIRO SILVERIO LAVANDEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38216
+:A38216 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB13 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-4-19" ;
+       :nomeAluno "NELSON DE SOUSA E SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33196
+:A33196 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-5-24" ;
+       :nomeAluno "NELSON FILIPE COELHO DE MOURA SOUSA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33420
+:A33420 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2000-11-19" ;
+       :nomeAluno "NELSON LEANDRO BARBOSA CARNEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38195
+:A38195 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-10-12" ;
+       :nomeAluno "NELSON TAVARES CUNHA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33727
+:A33727 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-5-13" ;
+       :nomeAluno "NUNO FILIPE ANTUNES DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33127
+:A33127 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-10-16" ;
+       :nomeAluno "NUNO FILIPE MAGALHAES SANTOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A24784
+:A24784 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-12-9" ;
+       :nomeAluno "NUNO FILIPE MARQUES MOREIRA RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38208
+:A38208 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-8-27" ;
+       :nomeAluno "NUNO GONCALO BETTENCOURT DA CRUZ CORREIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38203
+:A38203 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-6-23" ;
+       :nomeAluno "NUNO JORGE FERREIRA GUIMARAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A15619
+:A15619 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS2 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-5-18" ;
+       :nomeAluno "NUNO MIGUEL AFONSO CARVALHO DE MOURA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35355
+:A35355 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1998-5-8" ;
+       :nomeAluno "NUNO MIGUEL MACHADO ALVES COSTA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33437
+:A33437 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-10-3" ;
+       :nomeAluno "NUNO MIGUEL MARQUES GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22701
+:A22701 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-1-17" ;
+       :nomeAluno "NUNO MIGUEL MARTINS CASANOVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27645
+:A27645 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB3 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-7-13" ;
+       :nomeAluno "NUNO MIGUEL OLIVEIRA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29282
+:A29282 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-11-1" ;
+       :nomeAluno "NUNO VIRIATO MACEDO FERREIRA DE CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38120
+:A38120 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS11 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-10-17" ;
+       :nomeAluno "OCTAVIO DAVID DA CONCEICAO JACINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A14539
+:A14539 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-10-6" ;
+       :nomeAluno "ORLANDO JORGE GONCALVES PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33280
+:A33280 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2001-2-7" ;
+       :nomeAluno "PAULO BRUNO DA SILVA VIDES FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A34508
+:A34508 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-9-6" ;
+       :nomeAluno "PAULO CESAR ALMEIDA DE SA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27577
+:A27577 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1996-7-18" ;
+       :nomeAluno "PAULO CESAR DE CARVALHO LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39938
+:A39938 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-11-15" ;
+       :nomeAluno "PAULO CESAR ROMANEL RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33204
+:A33204 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-2-23" ;
+       :nomeAluno "PAULO EDUARDO MIRANDA CAMPOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38122
+:A38122 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-10-10" ;
+       :nomeAluno "PAULO JORGE ASSIS DE SOUSA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35357
+:A35357 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS2 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-5-18" ;
+       :nomeAluno "PAULO JORGE FERNANDES DE SOUSA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30238
+:A30238 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-11-21" ;
+       :nomeAluno "PAULO JORGE SOARES MENDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39407
+:A39407 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-12-24" ;
+       :nomeAluno "PAULO MANUEL RIBEIRO NOVAIS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33209
+:A33209 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "2001-8-7" ;
+       :nomeAluno "PAULO MIGUEL SA MORAIS PIRES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36476
+:A36476 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-10-27" ;
+       :nomeAluno "PEDRO ALEXANDRE FERREIRA VILACA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35360
+:A35360 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2001-9-24" ;
+       :nomeAluno "PEDRO DANIEL FERREIRA DE CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A21711
+:A21711 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-9-27" ;
+       :nomeAluno "PEDRO DAVID ALVES MARTINHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A32652
+:A32652 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS15 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2005-9-18" ;
+       :nomeAluno "PEDRO DUARTE CARDOSO LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36969
+:A36969 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS17 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-6-16" ;
+       :nomeAluno "PEDRO EMANUEL FERNANDES LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33213
+:A33213 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS6 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-4-14" ;
+       :nomeAluno "PEDRO GUIMARAES DE FREITAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30241
+:A30241 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1999-6-1" ;
+       :nomeAluno "PEDRO HENRIQUE GONCALVES GERAZ RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33214
+:A33214 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1996-10-6" ;
+       :nomeAluno "PEDRO JORGE OSORIO MARINHO OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38116
+:A38116 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS16 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-3-11" ;
+       :nomeAluno "PEDRO JOSE MARTINS FARIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35144
+:A35144 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-8-25" ;
+       :nomeAluno "PEDRO MANUEL DE AMORIM MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38118
+:A38118 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-9-21" ;
+       :nomeAluno "PEDRO MANUEL LOPES PATRICIO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27658
+:A27658 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS3 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-1-20" ;
+       :nomeAluno "PEDRO MIGUEL ARAUJO MOTA LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38159
+:A38159 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-6-21" ;
+       :nomeAluno "PEDRO MIGUEL AZEVEDO DE OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35363
+:A35363 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-2-14" ;
+       :nomeAluno "PEDRO MIGUEL DA SILVA ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A25383
+:A25383 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB12 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-3-8" ;
+       :nomeAluno "PEDRO MIGUEL MARTINS FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35364
+:A35364 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-8-16" ;
+       :nomeAluno "PEDRO MIGUEL MEIRA DAS NEVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33524
+:A33524 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-10-3" ;
+       :nomeAluno "PEDRO MIGUEL PAES MACHADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35855
+:A35855 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-3-24" ;
+       :nomeAluno "PEDRO MIGUEL PINTO RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38147
+:A38147 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-3-22" ;
+       :nomeAluno "PEDRO MIGUEL RAMOS MADEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33281
+:A33281 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2000-2-11" ;
+       :nomeAluno "PEDRO MIGUEL SOARES PINTO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30243
+:A30243 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB15 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-2-24" ;
+       :nomeAluno "PEDRO MIGUEL VEIGA DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38149
+:A38149 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-2-8" ;
+       :nomeAluno "PEDRO SILVESTRE MENESES MAGALHAES COELHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38160
+:A38160 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS17 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2002-3-7" ;
+       :nomeAluno "PEDRO TIAGO AMORIM DE BRITO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33082
+:A33082 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-4-27" ;
+       :nomeAluno "PEDRO TIAGO DIAS GONCALVES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38154
+:A38154 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1998-1-22" ;
+       :nomeAluno "RAFAEL DE CASTRO CARREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38158
+:A38158 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-7-1" ;
+       :nomeAluno "RAUL GRACIANO OLIVEIRA RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30015
+:A30015 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS11 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-10-17" ;
+       :nomeAluno "RENATO CESAR ALMEIDA FIGUEIREDO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39509
+:A39509 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-4-17" ;
+       :nomeAluno "RICARDO ANDRE RODRIGUES AFONSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38153
+:A38153 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-2-22" ;
+       :nomeAluno "RICARDO ARAUJO CARVALHO VILACA MOREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38151
+:A38151 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-4-5" ;
+       :nomeAluno "RICARDO FERNANDO LIRA DE MESQUITA LACHADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38129
+:A38129 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS11 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-10-8" ;
+       :nomeAluno "RICARDO GOMES DE FARIA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33222
+:A33222 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-7-10" ;
+       :nomeAluno "RICARDO JORGE ALMEIDA DE MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38130
+:A38130 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS9 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-10-21" ;
+       :nomeAluno "RICARDO JORGE RODRIGUES SEPULVEDA MARQUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A34435
+:A34435 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB18 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-8-15" ;
+       :nomeAluno "RICARDO JOSE FERREIRA DIAS DE OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A19550
+:A19550 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-11-5" ;
+       :nomeAluno "RICARDO MANUEL RODRIGUES DE OLIVEIRA DIMAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35366
+:A35366 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB5 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-6-14" ;
+       :nomeAluno "RICARDO MANUEL VIANA MAGALHAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A22721
+:A22721 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-12-20" ;
+       :nomeAluno "RICARDO NUNO MOREIRA CASTILHO FERREIRA LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30254
+:A30254 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-2-27" ;
+       :nomeAluno "ROQUE MANUEL DE CARVALHO TEIXEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A18770
+:A18770 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS14 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-9-2" ;
+       :nomeAluno "ROSA ALEXANDRA AZEVEDO GUIMARAES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38141
+:A38141 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB19 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-10-20" ;
+       :nomeAluno "RUBEN FILIPE CARDOSO DA FONSECA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38200
+:A38200 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS20 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-12-14" ;
+       :nomeAluno "RUI ALEXANDRE SERRANO DE MOURA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36764
+:A36764 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS2 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-12-8" ;
+       :nomeAluno "RUI ANDRE FERREIRA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38135
+:A38135 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB20 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1997-10-2" ;
+       :nomeAluno "RUI ANDRE LEITE RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39944
+:A39944 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2000-5-25" ;
+       :nomeAluno "RUI ANTONIO PEIXOTO DE ABREU" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38148
+:A38148 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-4-27" ;
+       :nomeAluno "RUI DOMINGOS GUIMARAES SALGADO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33228
+:A33228 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1996-6-20" ;
+       :nomeAluno "RUI FILIPE BARROS TAVARES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38146
+:A38146 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB18 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-6-8" ;
+       :nomeAluno "RUI FILIPE TORRES ALEXANDRE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38908
+:A38908 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-5-7" ;
+       :nomeAluno "RUI JORGE DE OLIVEIRA PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35371
+:A35371 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1999-7-7" ;
+       :nomeAluno "RUI JORGE GUIMARAES MACHADO RODRIGUES VALENTE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A24875
+:A24875 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-11-23" ;
+       :nomeAluno "RUI MANUEL COUTO DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A37029
+:A37029 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1996-12-16" ;
+       :nomeAluno "RUI MANUEL DA SILVA PEREIRA NEIVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33229
+:A33229 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2000-1-19" ;
+       :nomeAluno "RUI MANUEL SILVA OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38119
+:A38119 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-6-5" ;
+       :nomeAluno "RUI MIGUEL DA SILVA ABREU" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A24876
+:A24876 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "2000-4-19" ;
+       :nomeAluno "RUI MIGUEL ESCUDEIRO DA COSTA AGUIAR" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29253
+:A29253 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-2-6" ;
+       :nomeAluno "RUI MIGUEL FERNANDES VARELA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A25868
+:A25868 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2001-5-10" ;
+       :nomeAluno "RUI MIGUEL MORAIS LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A28735
+:A28735 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS4 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-6-6" ;
+       :nomeAluno "RUI MIGUEL NOVAIS CASTRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27673
+:A27673 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB1 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-8-13" ;
+       :nomeAluno "RUI MIGUEL PEREIRA OLIVEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35372
+:A35372 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB8 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-12-7" ;
+       :nomeAluno "RUI PEDRO ANDIAS DUARTE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33234
+:A33234 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-10-15" ;
+       :nomeAluno "SANDRA MARIA OLIVEIRA CARVALHO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36765
+:A36765 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1997-4-18" ;
+       :nomeAluno "SANDRA MARIA TELES FEIO ALMEIDA FAZENDEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38173
+:A38173 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB11 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-12-1" ;
+       :nomeAluno "SEBASTIAO MONTEIRO SIMOES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38183
+:A38183 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1998-1-22" ;
+       :nomeAluno "SERGIO BRANCO AMORIM" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33235
+:A33235 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1997-10-25" ;
+       :nomeAluno "SERGIO DE ALMEIDA PAIVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39343
+:A39343 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS19 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-10-23" ;
+       :nomeAluno "SERGIO FELICIANO FERREIRA JACOME" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39410
+:A39410 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB12 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1996-5-26" ;
+       :nomeAluno "SERGIO FILIPE PEREIRA DA FELICIDADE" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35374
+:A35374 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB2 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "2000-9-21" ;
+       :nomeAluno "SERGIO MANUEL PEREIRA BARREIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A24885
+:A24885 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB9 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-3-2" ;
+       :nomeAluno "SERGIO MANUEL RUIVO CARDOSO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38177
+:A38177 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-8-21" ;
+       :nomeAluno "SERGIO NUNO CLARO GOMES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35375
+:A35375 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS20 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-5-25" ;
+       :nomeAluno "SERGIO RICARDO TEIXEIRA ANDIAS MIRANDA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38181
+:A38181 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS13 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-6-21" ;
+       :nomeAluno "SOFIA DA CONCEICAO ALVES MENDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33238
+:A33238 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS18 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-7-20" ;
+       :nomeAluno "SONIA ANDREA GARRIDO DE SA EIRAS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35376
+:A35376 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "1997-3-23" ;
+       :nomeAluno "TELMA DE FATIMA PIRES DE SA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38131
+:A38131 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS21 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2004-4-15" ;
+       :nomeAluno "TIAGO DANIEL CERQUEIRA BOTELHO DA SILVA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33240
+:A33240 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-4-9" ;
+       :nomeAluno "TIAGO JORGE GOMES DA SILVA ARAUJO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38144
+:A38144 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB6 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1999-12-24" ;
+       :nomeAluno "TIAGO LEANDRO DE CASTRO RIBEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38145
+:A38145 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS12 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2003-12-8" ;
+       :nomeAluno "TIAGO MIGUEL SOARES FERNANDES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A29254
+:A29254 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS8 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2002-5-3" ;
+       :nomeAluno "TITO JOSE FERREIRA DE SOUSA LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35418
+:A35418 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "1997-7-11" ;
+       :nomeAluno "VALTER MIGUEL OLIVEIRA VILAR" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38127
+:A38127 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS5 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2003-11-21" ;
+       :nomeAluno "VANESSA ALZIRA ABRUNHOSA CARNEIRO DE CASTRO FIDALGO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33282
+:A33282 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB17 ;
+       :anoCurso "2"^^xsd:int ;
+       :dataNasc "2000-5-4" ;
+       :nomeAluno "VIRGILIO ABRANTES VINHA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A30266
+:A30266 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS10 ;
+       :anoCurso "7"^^xsd:int ;
+       :dataNasc "2002-2-7" ;
+       :nomeAluno "VITOR CARLOS TEIXEIRA PIMENTEL" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35377
+:A35377 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1996-3-11" ;
+       :nomeAluno "VITOR DA COSTA PINHEIRO" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38192
+:A38192 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2005-12-4" ;
+       :nomeAluno "VITOR HUGO DA SILVA NOGUEIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A35378
+:A35378 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB16 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1998-3-23" ;
+       :nomeAluno "VITOR HUGO PEREIRA DA SILVA MOREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A38182
+:A38182 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB22 ;
+       :anoCurso "4"^^xsd:int ;
+       :dataNasc "1998-5-2" ;
+       :nomeAluno "VITOR MANUEL ALVES DA ROCHA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A36773
+:A36773 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS22 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2004-6-28" ;
+       :nomeAluno "VITOR MANUEL CARVALHO RODRIGUES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A39671
+:A39671 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB13 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-8-9" ;
+       :nomeAluno "VITOR MANUEL PINTO LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27648
+:A27648 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB4 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1996-12-24" ;
+       :nomeAluno "NUNO RAMOS MATOS" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A27620
+:A27620 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB21 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1997-6-6" ;
+       :nomeAluno "JOAO ANDRE FARIA LOPES" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A33199
+:A33199 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB10 ;
+       :anoCurso "1"^^xsd:int ;
+       :dataNasc "1999-3-16" ;
+       :nomeAluno "NUNO FILIPE MENDES PEREIRA" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#AE-939
+:AE-939 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS1 ;
+       :anoCurso "6"^^xsd:int ;
+       :dataNasc "2003-6-27" ;
+       :nomeAluno "Jorge Gonzalez y Hurtado de Mendoza" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#AE-922
+:AE-922 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CS6 ;
+       :anoCurso "8"^^xsd:int ;
+       :dataNasc "2005-9-17" ;
+       :nomeAluno "Brais Hernandez Facal" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#AE-907
+:AE-907 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB7 ;
+       :anoCurso "3"^^xsd:int ;
+       :dataNasc "2000-4-20" ;
+       :nomeAluno "Oscar Lopez Garcia" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#A4140
+:A4140 rdf:type owl:NamedIndividual ,
+                :Aluno ;
+       :frequentaCurso :CB14 ;
+       :anoCurso "5"^^xsd:int ;
+       :dataNasc "1967-02-01" ;
+       :nomeAluno "José Carlos Ramalho" .
+
+       
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB1
+:CB1 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I1 ;
+     :designacao "Curso Básico de Clarinete" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS23
+:CS23 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I1 ;
+     :designacao "Curso Supletivo de Clarinete" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB2
+:CB2 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I2 ;
+     :designacao "Curso Básico de Contrabaixo" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS24
+:CS24 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I2 ;
+     :designacao "Curso Supletivo de Contrabaixo" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB3
+:CB3 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I3 ;
+     :designacao "Curso Básico de Corne Inglês" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS25
+:CS25 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I3 ;
+     :designacao "Curso Supletivo de Corne Inglês" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB4
+:CB4 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I4 ;
+     :designacao "Curso Básico de Eufónio" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS26
+:CS26 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I4 ;
+     :designacao "Curso Supletivo de Eufónio" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB5
+:CB5 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I5 ;
+     :designacao "Curso Básico de Fagote" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS27
+:CS27 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I5 ;
+     :designacao "Curso Supletivo de Fagote" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB6
+:CB6 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I6 ;
+     :designacao "Curso Básico de Flauta" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS28
+:CS28 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I6 ;
+     :designacao "Curso Supletivo de Flauta" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB7
+:CB7 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I7 ;
+     :designacao "Curso Básico de Fliscorne" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS29
+:CS29 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I7 ;
+     :designacao "Curso Supletivo de Fliscorne" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB8
+:CB8 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I8 ;
+     :designacao "Curso Básico de Guitarra" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS30
+:CS30 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I8 ;
+     :designacao "Curso Supletivo de Guitarra" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB9
+:CB9 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I9 ;
+     :designacao "Curso Básico de Harpa" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS31
+:CS31 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I9 ;
+     :designacao "Curso Supletivo de Harpa" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB10
+:CB10 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I10 ;
+     :designacao "Curso Básico de Oboé" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS32
+:CS32 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I10 ;
+     :designacao "Curso Supletivo de Oboé" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB11
+:CB11 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I11 ;
+     :designacao "Curso Básico de Orgão" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS33
+:CS33 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I11 ;
+     :designacao "Curso Supletivo de Orgão" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB12
+:CB12 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I12 ;
+     :designacao "Curso Básico de Percussão" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS34
+:CS34 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I12 ;
+     :designacao "Curso Supletivo de Percussão" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB13
+:CB13 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I13 ;
+     :designacao "Curso Básico de Piano" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS35
+:CS35 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I13 ;
+     :designacao "Curso Supletivo de Piano" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB14
+:CB14 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I14 ;
+     :designacao "Curso Básico de Saxofone" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS36
+:CS36 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I14 ;
+     :designacao "Curso Supletivo de Saxofone" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB15
+:CB15 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I15 ;
+     :designacao "Curso Básico de Trombone" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS37
+:CS37 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I15 ;
+     :designacao "Curso Supletivo de Trombone" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB16
+:CB16 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I16 ;
+     :designacao "Curso Básico de Trompa" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS38
+:CS38 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I16 ;
+     :designacao "Curso Supletivo de Trompa" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB17
+:CB17 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I17 ;
+     :designacao "Curso Básico de Trompete" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS39
+:CS39 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I17 ;
+     :designacao "Curso Supletivo de Trompete" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB18
+:CB18 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I18 ;
+     :designacao "Curso Básico de Tuba" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS40
+:CS40 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I18 ;
+     :designacao "Curso Supletivo de Tuba" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB19
+:CB19 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I19 ;
+     :designacao "Curso Básico de Violoncelo" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS41
+:CS41 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I19 ;
+     :designacao "Curso Supletivo de Violoncelo" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB20
+:CB20 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I20 ;
+     :designacao "Curso Básico de Violino" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS42
+:CS42 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I20 ;
+     :designacao "Curso Supletivo de Violino" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB21
+:CB21 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I21 ;
+     :designacao "Curso Básico de Viola de Arco" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS43
+:CS43 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I21 ;
+     :designacao "Curso Supletivo de Viola de Arco" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CB22
+:CB22 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I22 ;
+     :designacao "Curso Básico de Bandolim" ;
+     :duracao "5"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#CS44
+:CS44 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :temInstrumento :I22 ;
+     :designacao "Curso Supletivo de Bandolim" ;
+     :duracao "3"^^xsd:int .
+
+     
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I1
+:I1 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Clarinete" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I2
+:I2 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Contrabaixo" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I3
+:I3 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Corne Inglês" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I4
+:I4 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Eufónio" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I5
+:I5 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Fagote" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I6
+:I6 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Flauta" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I7
+:I7 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Fliscorne" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I8
+:I8 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Guitarra" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I9
+:I9 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Harpa" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I10
+:I10 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Oboé" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I11
+:I11 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Orgão" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I12
+:I12 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Percussão" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I13
+:I13 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Piano" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I14
+:I14 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Saxofone" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I15
+:I15 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Trombone" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I16
+:I16 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Trompa" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I17
+:I17 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Trompete" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I18
+:I18 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Tuba" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I19
+:I19 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Violoncelo" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I20
+:I20 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Violino" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I21
+:I21 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Viola de Arco" .
+
+    
+###  http://rpcw.di.uminho.pt/2024/escolaMusica#I22
+:I22 rdf:type owl:NamedIndividual ,
+             :Instrumento ;
+    :nomeInstrumento "Bandolim" .
+
+    
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

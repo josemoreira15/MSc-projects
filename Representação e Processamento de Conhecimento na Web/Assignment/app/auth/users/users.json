@@ -1,0 +1,14 @@
+{
+    "jose.moreira.15": {
+        "password": "$2b$12$yp4jXi8M1dDvDbZSyO66Q.4P3ARrBrWlp6PT3C.lYKi5i5mRJ.Oiy",
+        "status": "offline"
+    },
+    "goncalocp": {
+        "password": "$2b$12$YnkEMvV4HD41/X1FwBhuuuQuGnyysJs/B8vLJ8rceuD8LcoBErvAm",
+        "status": "offline"
+    },
+    "duarteparente": {
+        "password": "$2b$12$7Dn7zaAAoZITuAXgatWXU.eOGyLtvY39T30twlcaoKU4ZULfWXr8q",
+        "status": "offline"
+    }
+}

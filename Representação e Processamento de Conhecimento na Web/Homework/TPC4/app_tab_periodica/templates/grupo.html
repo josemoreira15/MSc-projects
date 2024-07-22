@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        {% set group_id = data[0].group.value.split('#')[-1] %}
+        <title>Tabela Periódica : {{ group_id }}</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>    
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>{{ group_id }}</h1>
+                <p><a href="/">[Página Principal]</a></p>
+                <p><a href="/grupos">[Página dos Grupos]</a></p>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Nome</th>
+                    </tr>
+                    <tr>
+                        {% if data[0].nome %}
+                        <td>{{ data[0].nome.value }}</td>
+                        {% else %}
+                        <td>----------</td>
+                        {% endif %}
+                    </tr>
+                </table>
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Número</th>
+                    </tr>
+                    <tr>
+                        {% if data[0].num %}
+                        <td>{{ data[0].num.value }}</td>
+                        {% else %}
+                        <td>----------</td>
+                        {% endif %}
+                    </tr>
+                </table>
+                <div class="w3-container w3-purple">
+                    <h1></h1>
+                </div>
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Elementos</th>
+                    </tr>
+                    {% for entry in data %}
+                    <tr>
+                        <td><a href="/elementos/{{ entry.elnome.value }}">{{ entry.elnome.value }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por topzN::RPCW2024</h5>
+            </footer>
+        </div>
+    </body>
+</html>
