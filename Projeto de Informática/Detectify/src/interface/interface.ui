@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuSave_As">
+     <property name="title">
+      <string>Save As</string>
+     </property>
+     <addaction name="actionPNG_file"/>
+     <addaction name="actionJSON_file"/>
+    </widget>
+    <addaction name="actionOpen"/>
+    <addaction name="actionOpen_Recent"/>
+    <addaction name="actionSave_2"/>
+    <addaction name="menuSave_As"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuRun">
+    <property name="title">
+     <string>Run</string>
+    </property>
+    <addaction name="actionImport_JSON"/>
+    <addaction name="actionExport_Perforations"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionClasses"/>
+   </widget>
+   <widget class="QMenu" name="menuBuild">
+    <property name="title">
+     <string>Build</string>
+    </property>
+    <addaction name="actionBuild_Graph"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuRun"/>
+   <addaction name="menuBuild"/>
+   <addaction name="menuSettings"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="text">
+    <string>Run AI Model</string>
+   </property>
+  </action>
+  <action name="actionClasses">
+   <property name="text">
+    <string>Classes</string>
+   </property>
+  </action>
+  <action name="actionPNG_file">
+   <property name="text">
+    <string>PNG File</string>
+   </property>
+  </action>
+  <action name="actionJSON_file">
+   <property name="text">
+    <string>JSON File</string>
+   </property>
+  </action>
+  <action name="actionJSON_file_2">
+   <property name="text">
+    <string>JSON file</string>
+   </property>
+  </action>
+  <action name="actionDXF_file">
+   <property name="text">
+    <string>DXF file</string>
+   </property>
+  </action>
+  <action name="actionExtract_PDF">
+   <property name="text">
+    <string>Process PDF</string>
+   </property>
+  </action>
+  <action name="actionExport_Perforations">
+   <property name="text">
+    <string>Export Perforations</string>
+   </property>
+  </action>
+  <action name="actionSave_2">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionBuild_Graph">
+   <property name="text">
+    <string>Build Graph</string>
+   </property>
+  </action>
+  <action name="actionOpen_Recent">
+   <property name="text">
+    <string>Open Recent</string>
+   </property>
+  </action>
+  <action name="actionRun_AI_Model">
+   <property name="text">
+    <string>Run AI Models</string>
+   </property>
+  </action>
+  <action name="actionJSON_File">
+   <property name="text">
+    <string>JSON File</string>
+   </property>
+  </action>
+  <action name="actionDXF_File">
+   <property name="text">
+    <string>DXF Files</string>
+   </property>
+  </action>
+  <action name="actionClear_Cache">
+   <property name="text">
+    <string>Clear Cache</string>
+   </property>
+  </action>
+  <action name="actionImport_JSON">
+   <property name="text">
+    <string>Import JSON</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
